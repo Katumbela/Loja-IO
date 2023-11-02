@@ -1,0 +1,116 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.container h1
+{
+    text-align: center;
+    border-bottom: 1px solid grey;
+    margin-top: 20px;
+    font-size: 42px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #010f1c;
+}
+.main_box
+{
+    padding: 40px 50px;
+    width: 100%;
+}
+.main_box .box
+{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main_box .box .card
+{
+    padding: 10px 20px;
+    display: flex;
+    background: fff;
+    width: 300px;
+    height:80px;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main_box .box .card .icone
+{
+  color: #010f1c;
+  font-size: 25px;
+  margin-top:0%
+}
+.main_box .box .card .detalhe
+{
+  margin-top: 0%;
+  margin-left: 10px;
+}
+.main_box .box .card .detalhe h6
+{
+  font-size: 18px;
+  color: #010f1c;
+}
+.main_box .box .card .detalhe p
+{
+  font-size: 16px;
+  color: #010f1c;
+  margin-top: 10px;
+}
+.main
+{
+    padding: 40px 50px;
+    width: 100%;
+  
+}
+.main .box_input
+{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main .box_input input
+{
+    padding: 10px 30px;
+    display: flex;
+    outline: none;
+    width: 300px;
+    height:50px;
+    margin-top:-30px;
+}
+.form-group
+{
+    padding: 40px 50px;
+    width: 100%; 
+}
+.form-group .form-msm 
+{
+    display: flex;
+    max-width: 100%;
+    margin-top: -20px;
+}
+.form-group .form-msm textarea
+{
+    min-width: 100%;
+    min-height: 200px;
+}
+.form-group .enviarbtn button
+{
+    margin-top: 30px;
+    padding: 15px 60px;
+    font-size: 16px;
+    color: #010f1c;
+    background: #0989ff;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 200px;
+    border-radius: 5px;
+}
+.form-group .enviarbtn
+{
+margin-left: 550px;
+}

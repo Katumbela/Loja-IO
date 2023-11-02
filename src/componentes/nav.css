@@ -1,0 +1,118 @@
+.livre {
+    height: 2.5em;
+    align-items: center;
+    align-content: center;
+    background-color: black;
+}
+
+.livre .icone {
+    color: #ffffff
+}
+
+.livre span {
+    color: white;
+}
+
+.main_header .logo {
+    height: 3em;
+    margin-right: 1rem;
+}
+
+.main_header  {
+    padding-top: 1em;
+}
+
+.caixa_pesquisa input {
+    border: 1px solid #147eff;
+    padding: 10px 15px ;
+    outline: none;
+    height: 3em;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+.caixa_pesquisa button {
+    border: 1px solid #147eff;
+    padding: 10px 20px ;
+    background: #147eff;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 3em;
+    color: white;
+}
+.caixa_pesquisa, .icone1  {
+   align-items: center;
+   align-content: center;
+   display: flex;
+}
+
+.icone1 .link{
+    font-size: 30px;
+    margin-left: 2rem;
+}
+
+
+.caixa_pesquisa  {
+    width: 55vw;
+  }
+
+.header {
+margin-top: 1rem;
+background: #f3f3f3;
+/*border-bottom: 2px solid #147eff;*/
+border-bottom: 2px solid #147eff;
+}
+
+.header .nav ul  {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+}
+
+.header .nav ul li  {
+    list-style-type: none;
+    margin-right: 15px;
+    padding: 15px 0px;
+    text-decoration: none;
+ }
+ .header .nav ul li a {
+   padding: 10px 15px;
+    text-decoration: none;
+    color: #373753;
+ }
+
+ .header .nav ul li a:hover {
+    transition: all.2s ease-out;
+    padding: 10px 15px;
+     text-decoration: none;
+     background-color: #9dc9ff;
+     color: #ffffff!important;
+     border-radius: 5px;
+  }
+ 
+.header .container  {
+  display: flex;
+  justify-content: space-between;
+}
+.loginout {
+    margin-top: .99rem;
+}
+.login-btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #147eff;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.login-btn:hover .login-btn .icon {
+   transition: all .2s ease;
+   transform: translateX(50px);
+}
+
+@media (max-width: 700px) {
+        
+    .caixa_pesquisa  {
+        flex: 4;
+    }
+}

@@ -1,0 +1,102 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.footer
+{
+    padding: 30px 40px;
+    width: 100%;
+    border-top: 1px solid #e2e0e0;
+    height: 20px;
+}
+.footer .container
+{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .container .sobre
+{
+    width: 30%;
+}
+.footer .container .sobre .logo img
+{
+    margin-top: -50px;
+}
+.footer .container .sobre .icone
+{
+    margin-top: 20px;
+    display:flex;
+}
+.footer .container .sobre .icone li{
+    margin-left: 20px;
+    list-style: none;
+    padding: 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.footer .container .sobre .icone li:hover
+{
+    background: #0989ff;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.footer .container .conta
+{
+    margin-right: 100px;
+    margin-top: 30px;
+}
+.footer .container .conta h3
+{
+    font-size: 32px;
+    color: #010f1c;
+}
+.footer .container .conta ul
+{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.footer .container .conta ul li
+{
+    margin-top: 5px;
+    color: #010f1c;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.footer .container .conta ul li:hover
+{
+    color: #0989ff;
+}
+.footer .container .pagina
+{
+    margin-right: 100px;
+    margin-top: 30px;
+}
+.footer .container .pagina h3
+{
+    font-size: 32px;
+    color: #010f1c;
+}
+.footer .container .pagina ul
+{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.footer .container .pagina ul li
+{
+    margin-top: 5px;
+    color: #010f1c;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.footer .container .pagina ul li:hover
+{
+    color: #0989ff;
+}

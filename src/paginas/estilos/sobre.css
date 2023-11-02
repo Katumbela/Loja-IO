@@ -1,0 +1,65 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.sobre
+{
+    padding: 30px 40px;
+    width: 100%;
+}
+.sobre h2
+{
+    font-size: 42px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #010f1c;
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+}
+.sobre .img
+{
+    border-right: 1px solid grey;
+    width: 25%;
+    float: left;
+    margin-top: 20px;
+    height: 300px;
+}
+.sobre .img img
+{
+    width: 250px;
+    height: 300px;
+}
+.sobre .conteudo
+{
+   margin-top: 60px;
+}
+.sobre .conteudo p
+{
+   text-align: justify;
+   margin-bottom: 1em;
+   margin-right: 1em;
+   line-height: 1.5em;
+   text-indent: 1em;
+}
+.sobre p
+{
+    text-align: justify;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+    text-indent: 1em;
+}
+.sobre .conteudo1
+{
+    margin-top:95px
+}
+.sobre .conteudo1 p
+{
+    text-align: justify;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+    text-indent: 1em;
+}

@@ -1,0 +1,27 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.log_container 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color:white;
+}
+.log_container .box_left
+{
+    float: left;
+    width: 50%
+}
+.log_container .box_right
+{
+    float: right;
+    width:50%
+}
