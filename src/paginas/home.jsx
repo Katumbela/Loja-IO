@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { BsTruck } from 'react-icons/bs';
-import { BiDollarCircle } from 'react-icons/bi';
+import { BsCart2, BsCart3, BsCartPlus, BsFillBarChartFill, BsStar, BsStarFill, BsStarHalf, BsTruck } from 'react-icons/bs';
+import { BiArrowBack, BiDollarCircle } from 'react-icons/bi';
 import { MdCardMembership } from 'react-icons/md';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
 import { PiShoppingCartBold } from 'react-icons/pi';
@@ -16,29 +16,50 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
             {
                 fechar ?
 
-                    <div className='detalhe_produto'>
+                    <div className='detalhe_produto py-5'>
                         <div className='container-fluid '>
-                            <button onClick={() => setFechar(false)} className='btnfechar'><AiOutlineCloseCircle /></button>
+                            <button onClick={() => setFechar(false)} className='btnfechar'><BiArrowBack /> Voltar</button>
                             {
                                 detalhe.map((curElm) => {
                                     return (
-                                        <div className='boxproduto row'>
-                                            <div className='img_box text-center pt-4 col-12 col-md-4'>
-                                               <br />
-                                                <img src={curElm.Img} alt={curElm.Titulo}></img>
+                                        <div className='boxproduto py-5'>
+                                        <div className="row w-100 my-3">
+                                          <div className=' text-center col-12 col-md-4 col-xl-5 '>
+                                            <img src={curElm.Img} alt={curElm.Titulo} className="w-100 my-auto" />
+                                          </div>
+                    
+                                          <div className='detalhe px-4 px-md-0 col-12 col-md-8 col-xl-7 '>
+                                            <h1>{curElm.Titulo}</h1>
+                                            <h4 className="text-secondary">{curElm.Cat}</h4>
+                                            <p className="d-flex gap-2">
+                                              <BsStarFill className="text-warning"/>
+                                              <BsStarFill className="text-warning"/>
+                                              <BsStarFill className="text-warning"/>
+                                              <BsStarHalf className="text-warning"/>
+                                              <BsStar className="text-warning"/>
+                                            </p>
+                                            <h3>{curElm.Preco} Kz</h3>
+                                            <p className="text-secondary">
+                                              Telefone recondicionado, vindo do lugar x ou algo parecido a isto, sei lá
+                                            </p>
+                                            <div className="d-flex gap-4 btns-buy flex-wrap ">
+                                              <button className="w-sm-100">Adicionar ao carrinho <BsCartPlus /></button>
+                    
+                                              <button className="w-sm-100">Comprar agora <BsCart2 /></button>
                                             </div>
-                                            <div className='detalhe col-12 col-md-8'>
-                                                <h5>{curElm.Cat}</h5>
-                                                <h3>{curElm.Titulo}</h3>
-                                                <p>lorem lorem lorem lorem lorem lorem</p>
-                                                <h3>{curElm.Preco}</h3>
-                                                <button>Adicionar ao carrinho</button>
-                                            </div>
+                                          </div>
+                                          <div className="col-12 px-4 px-md-5 mt-md-5 container mt-4">
+                    
+                                            <h2> Sobre este produto</h2>
+                                            <p>
+                                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae nobis modi laudantium temporibus ut tempora beatae doloribus perspiciatis sapiente quae, omnis a, accusantium reprehenderit excepturi quas odit magni? Totam.
+                                            </p>
+                                          </div>
                                         </div>
+                                      </div>
                                     )
                                 })
                             }
-                            <div className='boxproduto'></div>
                         </div>
                     </div> : null
             }
@@ -50,7 +71,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                 </div>
             </div>
 
-            <div className="destaque">
+            {/*<div className="destaque">
                 <div className=" container-lg">
                     <div className='box'>
                         <div className="box_img">
@@ -75,19 +96,20 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                 </div>
             </div>
             <hr />
+            */}
             <div className="produto ">
                 <center>
-                    <h1>Explore Nossa Loja</h1>
+                    <h1 className="titulo">Explore Nossa Loja</h1>
                 </center>
                 <div className="container-fluid ">
                     <div className="row ">
                         {
                             Homeproduto.map((curElm) => {
                                 return (
-                                    <div className=" col-12 col-sm-6 col-lg-3  col-xxl-3" key={curElm.id}>
+                                    <div className=" col-12 col-sm-6 col-md-4 col-lg-3  col-xxl-3" key={curElm.id}>
                                         <div className="box">
-                                            <div className="img_box text-center">
-                                                <center><img src={curElm.Img} alt={curElm.Titulo}/></center>
+                                            <div className="img_box">
+                                                <img src={curElm.Img} alt={curElm.Titulo} />
                                                 <div className="icone">
                                                     <li onClick={() => addcarrinho(curElm)}> <PiShoppingCartBold /></li>
                                                     <li onClick={() => ver(curElm)}><ImEye /></li>

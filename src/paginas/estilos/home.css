@@ -4,9 +4,10 @@
     font-family: sans-serif;
     box-sizing: border-box;
   }
-  html, body {
+  html, body  {
     overflow-x: hidden!important;
   }
+  
 
   ::-webkit-scrollbar {
     width: 6px;
@@ -36,7 +37,7 @@
     height: 50vh;
     padding: 30px 40px;
     width: 100%;
-    background: linear-gradient(180deg, #00000000, #00000000, #0218924d, #021892b7), url(../../img/banner.png);
+    background: linear-gradient(180deg, #ffffffeb, #ffffff86, #0000006b, #000000cb), url(../../img/banner.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -54,14 +55,18 @@
   }
 
 
-.top_banner .containe .detalhe{
-    margin-top: 8%;
-    margin-left: 30px;
-}
-
-
-.top_banner .containe button{
-  background-color: white;
+  .top_banner .container button{
+    background-color: white;
+    transition: all .2s ease-out;
+    /*box-shadow: 2px 4px 9px rgb(149, 214, 254);*/
+  }
+.top_banner .container button:hover{
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: all .2s ease;
   /*box-shadow: 2px 4px 9px rgb(149, 214, 254);*/
 }
 
@@ -103,7 +108,7 @@ margin-bottom: 40px;
 display: flex;
 max-width: 100vw;
 justify-content: space-between;
-overflow-x: auto;
+overflow-x: scroll!important;
 margin-top: 1rem;
 }
 
@@ -183,16 +188,13 @@ margin-top: 1rem;
 }
 
 /*Parte do design dos cards dos produtos*/
-.produto
-{
-  padding: 30px  40px;
-  width: 100%
-}
+
 .produto h2
 {
   font-size: 32px;
   color: #010f1c;
   margin-bottom: 20px;
+  font-weight: bolder;
 }
 
 
@@ -205,12 +207,16 @@ margin-top: 1rem;
   border: 1px solid #e2e0e0;
   transition: 0.5s;
   cursor:pointer;
+  background: white!important;
+  position: relative;
   border-radius: 12px;
 }
 .produto .container-fluid .box:hover
 {
  box-shadow: 2px 6px 9px #00000059;
 }
+
+
 .produto .container-fluid .box .img_box
 {
   display: flex;
@@ -219,9 +225,8 @@ margin-top: 1rem;
 }
 .produto .container-fluid .box .img_box img
 {
-  width: 300px;
-  height: 200px;
-  margin-right: 110px;
+  width: 100%;
+  margin: auto!important;
   transition: all .2s ease-in;
 }
 
@@ -229,25 +234,29 @@ margin-top: 1rem;
 .produto .container-fluid .box:hover img
 {
   transition: all .2s ease;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .produto .container-fluid .box .img_box .icone
 {
-  z-index: 1;
-  position: relative;
-  right: 0px;
+  /*z-index: 1;*/
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  transition: 0.5s;
+  position: absolute;
+  right: 1em;
+  border-radius: 10px;
+  box-shadow: 2px 4px 12px rgb(223, 249, 255);
+  transition: 0.3s;
+  transform: translateX(100px);
 }
+
 .produto .container-fluid .box:hover .icone
 {
-  transform: translateX(-130px);
+  transform: translateX(0px);
 }
 
-
+/*
 @media (max-width: 700px) {
   
   .produto .container-fluid .box:hover .icone
@@ -255,7 +264,7 @@ margin-top: 1rem;
     transform: translateX(-160px);
   }
   }
-
+*/
 
 
 
@@ -267,7 +276,7 @@ margin-top: 1rem;
   cursor:pointer;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background: #fff;
-  transition: 0.5s;
+  transition: 0.2s;
   font: 18px;
 }
 .produto .container-fluid .box .img_box .icone li:hover
@@ -357,66 +366,35 @@ text-decoration: none;
   height: 325px;
   margin: 10px 4px;
 }
-.detalhe_produto
-{
-    width: 100vw;
-    height: 100vh !important;
-    position: fixed;
-    top: 0;
-    bottom:0; 
-    right: 0;
-    left: 0;
-    z-index: 2;
-    display: grid;
-    place-content: center;
-    padding-top: 3rem;
-    background: rgba(209, 26, 26, 0.826);
-}
+
+
 .detalhe_produto .container-fluid
 {
-  overflow-y: auto;
   overflow-x: hidden;
     width: 100vw;
-    position: relative;
-    height: 100vh !important;
+    position: fixed;
+    height: 100vh!important;
     background: #fff;
     padding: 5px;
+    top: 0;
+    left: 0;
+    z-index: 9!important;
     border-radius: 1px;
-    box-shadow: rgba(208, 52, 52, 0.24) 0px 3px 8px;
 }
+
 .detalhe_produto .container-fluid .btnfechar
 {
     border: none;
     position: fixed;
-    top: 0.5rem;
-    right: .5rem;
+    top: 1.5rem;
+    left: 1.5rem;
     outline: none;
     background: none;
     font-size: 30px;
     color: #0989ff;
     cursor: pointer;
 }
-.detalhe_produto .container-fluid .boxproduto
-{
-    max-width: 100%;
-    display: flex;
-    overflow-y: auto;
-    margin-top: 20px;
-    justify-content: space-between;
-}
-.detalhe_produto .container-fluid .boxproduto .img_box
-{
-    width: 100%;
-}
-.detalhe_produto .container-fluid .boxproduto .img_box img
-{
-    width: 70%;
-}
-.detalhe_produto .container-fluid .boxproduto .detalhe
-{
-    margin-left: 30px;
-    margin-top: 10px;
-}
+
 .detalhe_produto .container-fluid .boxproduto .detalhe h4
 {
     text-transform: uppercase;
@@ -448,25 +426,31 @@ text-decoration: none;
 .detalhe_produto .container-fluid .boxproduto .detalhe button
 {
     margin-top: 30px;
-    padding: 15px 60px;
+    padding: 8px 18px;
     font-size: 16px;
     color: #fff;
     background: #010f1c;
-    transition: 0.5s;
-    border: none;
+    border: 2px solid #000;
     outline: none;
     cursor: pointer;
+    transition: all .2s ease-in;
     border-radius: 5px;
+    font-weight: bold;
 }
 .detalhe_produto .container-fluid .boxproduto .detalhe button:hover
 {
-background: #0989ff;
+background: transparent;
+border: 2px solid #000;
+transition: all .2s ease-out;
+color: #000;
+font-weight: bold;
+box-shadow: #9a9a9a 2px 3px 15px ;
 }
 
 
 
 @media (max-width: 300px) {
-         
+ 
 
   .produto .container-fluid .box:hover .icone
   {
@@ -489,11 +473,12 @@ background: #0989ff;
 
 @media (max-width: 400px) {
          
-
+/*
   .produto .container-fluid .box:hover .icone
   {
     transform: translateX(-160px) !important;
   }
+*/
   .produto .container-fluid .box
   {
     width: 90vw!important;
@@ -510,13 +495,32 @@ background: #0989ff;
 }
 
   @media (max-width: 500px) {
-           
-  
+    .w-sm-100 {
+      width: 107%!important;
+      margin: 6px auto!important;
+    }
+
+    
+.detalhe_produto .container-fluid .btnfechar
+{
+   
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+
+    .btns-buy {
+      width: 100%;
+      display: inline !important;
+    }
+    
+  /*
     .produto .container-fluid .box:hover .icone
     {
       transform: translateX(-160px);
     }
-
+*/
   .login-btn {
     display: none!important;
   }
@@ -562,6 +566,6 @@ background: #0989ff;
   .destaque .container-lg .box:hover img
   {
     transition: all .3s ease;
-    transform: scale(1.3);
+    transform: scale(1.05);
   }
 }
