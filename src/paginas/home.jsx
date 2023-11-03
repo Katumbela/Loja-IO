@@ -97,11 +97,12 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
             </div>
             <hr />
             */}
-            <div className="produto ">
+            <div className="produto container">
                 <center>
+                    <br />
                     <h1 className="titulo">Explore Nossa Loja</h1>
                 </center>
-                <div className="container-fluid ">
+                <div className="container-flui ">
                     <div className="row ">
                         {
                             Homeproduto.map((curElm) => {
