@@ -16,12 +16,12 @@ const Nav = ({ searchbtn }) => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   return (
     <>
-      <div className='d-flex livre justify-content-center'>
+      {/*<div className='d-flex livre justify-content-center'>
 
         <FaTruckMoving className='icone mx-5' />
 
         <span>Entregas grátis para compras acima de 100.000kz</span>
-      </div>
+      </div>*/}
 
       <div className='main_header bg-white'>
         <div className='container bg-white d-flex justify-content-between'>

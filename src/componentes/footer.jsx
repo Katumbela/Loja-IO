@@ -8,11 +8,11 @@ import './footer.css'
 const Footer = () => {
     return (
         <>
-        <div className='footer'>
+        <div className='footer bg-primary'>
             <div className='container'>
                 <div className='sobre'>
                     <div className='logo'>
-                        <img src='.\img\logo2.jpg ' alt='logo'></img>
+                        <img src='.\img\logo.jpg ' alt='logo'></img>
                     </div>
                    <div className='icone'>
                         <li><BsFacebook/></li>
