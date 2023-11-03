@@ -34,11 +34,11 @@
     display: grid;
     place-content: center;
     place-items: center;
-    height: 50vh;
+    height: 60vh;
     padding: 30px 40px;
     width: 100%;
-    background: linear-gradient(180deg, #000000eb, #00000086, #0000006b, #000000cb), url(../../img/banner6.jpeg);
-    background-size: contain;
+    background: linear-gradient(180deg, #00000082, #00000049, #0000006b, #000000cb), url(../../img/banner6.jpeg);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
   }
@@ -368,7 +368,7 @@ text-decoration: none;
 }
 
 
-.detalhe_produto .container-flui
+.produto .container-fluid
 {
   overflow-x: hidden;
     width: 100vw;
@@ -382,7 +382,7 @@ text-decoration: none;
     border-radius: 1px;
 }
 
-.detalhe_produto .container-flui .btnfechar
+.produto .container-fluid .btnfechar
 {
     border: none;
     position: fixed;
@@ -395,7 +395,7 @@ text-decoration: none;
     cursor: pointer;
 }
 
-.detalhe_produto .container-flui .boxproduto .detalhe h4
+.produto .container-fluid .boxproduto .detalhe h4
 {
     text-transform: uppercase;
     font-size: 14px;
@@ -403,7 +403,7 @@ text-decoration: none;
     color: #9a9a9a;
     letter-spacing: 1px;
 }
-.detalhe_produto .container-flui .boxproduto .detalhe h2
+.produto .container-fluid .boxproduto .detalhe h2
 {
     margin-top: 20px;
     font-size: 32px;
@@ -411,19 +411,19 @@ text-decoration: none;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
-.detalhe_produto .container-flui .boxproduto .detalhe p
+.produto .container-fluid .boxproduto .detalhe p
 {
     margin-top: 10px;
     color: #4a4a4a;
 }
-.detalhe_produto .container-flui .boxproduto .detalhe h3
+.produto .container-fluid .boxproduto .detalhe h3
 {
     margin-top: 10px;
     color: #010f1c;
     font-size: 32px;
     letter-spacing: 1px;
 }
-.detalhe_produto .container-flui .boxproduto .detalhe button
+.produto .container-fluid .boxproduto .detalhe button
 {
     margin-top: 30px;
     padding: 8px 18px;
@@ -437,7 +437,7 @@ text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
-.detalhe_produto .container-flui .boxproduto .detalhe button:hover
+.produto .container-fluid .boxproduto .detalhe button:hover
 {
 background: transparent;
 border: 2px solid #000;
@@ -501,7 +501,7 @@ box-shadow: #9a9a9a 2px 3px 15px ;
     }
 
     
-.detalhe_produto .container-flui .btnfechar
+.produto .container-fluid .btnfechar
 {
    
     font-size: 20px;
