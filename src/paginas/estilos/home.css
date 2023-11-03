@@ -294,7 +294,8 @@ margin-top: 1rem;
 }
 .produto .container-flui .box .detalhe h3
 {
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: bold;
   margin-top: 5px;
   color: #010f1c!important;
   transition: 0.5s;
@@ -384,9 +385,11 @@ text-decoration: none;
     top: 1.5rem;
     left: 1.5rem;
     outline: none;
-    background: none;
-    font-size: 30px;
-    color: #0989ff;
+    background: black;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 60px;
     cursor: pointer;
 }
 
@@ -476,8 +479,9 @@ box-shadow: #9a9a9a 2px 3px 15px ;
 */
   .produto .container-flui .box
   {
-    width: 90vw!important;
-    margin-left: -2.2rem;
+    width: 80vw!important;
+    margin: 1rem auto !important;
+   /* margin-left: -2.2rem;*/
   }
 
   
@@ -494,15 +498,6 @@ box-shadow: #9a9a9a 2px 3px 15px ;
       width: 107%!important;
       margin: 6px auto!important;
     }
-
-    
-.detalhe_produto .container-fluid .btnfechar
-{
-   
-    font-size: 20px;
-    color: #000;
-    cursor: pointer;
-}
 
 
     .btns-buy {

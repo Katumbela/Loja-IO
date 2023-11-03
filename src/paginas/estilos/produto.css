@@ -7,9 +7,9 @@
 }
 
 
-.produtos {
+.categporias {
     
-    transition: all .3s ease-out;
+    transition: all .4s ease-in;
 }
 
 .produtos h2
@@ -80,9 +80,22 @@
     position: fixed;
     top: 2rem;
     background: white; 
-    padding: 20px 10px;
-    transition: all .3s ease-out;
+    padding-top: 30px;
+    padding-right: 16px;
+    padding-left: 10px;
+    transition: all .2s ease-out;
     border-radius: 15px;
-    z-index: 1000; /* ajuste conforme necessário */
+    z-index: 1; /* ajuste conforme necessário */
   }
   
+
+  .n {
+    height: 50vh;
+    display: grid;
+    place-content: center;
+  }
+
+  .img-see {
+    width: 100%;
+    max-width: 18em;
+  }

@@ -81,7 +81,7 @@ const Produto = ({
                   <div className='boxproduto py-5'>
                     <div className="row w-100 my-3">
                       <div className=' text-center col-12 col-md-4 col-xl-5 '>
-                        <img src={curElm.Img} alt={curElm.Titulo} className="w-100 my-auto" />
+                        <img src={curElm.Img} alt={curElm.Titulo} className="img-see my-auto" />
                       </div>
 
                       <div className='detalhe px-4 px-md-0 col-12 col-md-8 col-xl-7 '>
@@ -120,10 +120,10 @@ const Produto = ({
         </div>
       ) : null}
       <div className={`produtos container my-4`}>
-        <h2>Produtos > {categoria}</h2>
+        <h3>Produtos > {categoria}</h3>
         <div className="row">
           <div className="filtro col-12 col-md-3 col-xxl-2">
-            <div className={`categorias ${isProdutosFixed ? 'produtos-fixed' : ''}`}>
+            <div className={`categorias ${isProdutosFixed ? 'produtos-fixed shadow-md' : ''}`}>
               <h3>Busque por categorias</h3>
               <ul>
                 <li className={`${categoria == 'Todos' ? 'ativo' : ''}`} onClick={() => TodosProdutos()}>Todos Produtos</li>
@@ -183,8 +183,8 @@ const Produto = ({
               </center>*/}
               {
                 produto <= 0 &&
-                <center>
-                  <span className="text-secondary">Nenhum resultado encontrado</span>
+                <center className="n">
+                  <span className="text-secondary ">Nenhum resultado encontrado</span>
                 </center>
               }
             </div>

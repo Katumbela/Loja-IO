@@ -44,3 +44,25 @@
 .copy a {
     text-decoration: none;
 }
+
+.chat {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgb(194, 0, 223);
+    padding: 20px;
+    border-radius: 90px;
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    box-shadow: 2px 5px 14px grey;
+    border: 1px solid rgb(175, 198, 255);
+
+}
+
+.chat a {
+    color: white;
+    font-size: 25px;
+}

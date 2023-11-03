@@ -25,7 +25,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                                         <div className='boxproduto py-5'>
                                             <div className="row w-100 my-3">
                                                 <div className=' text-center col-12 col-md-4 col-xl-5 '>
-                                                    <img src={curElm.Img} alt={curElm.Titulo} className="w-100 my-auto" />
+                                                    <img src={curElm.Img} alt={curElm.Titulo} className="img-see my-auto" />
                                                 </div>
 
                                                 <div className='detalhe px-4 px-md-0 col-12 col-md-8 col-xl-7 '>
@@ -50,10 +50,50 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                                                 </div>
                                                 <div className="col-12 px-4 px-md-5 mt-md-5 container mt-4">
 
-                                                    <h2> Sobre este produto</h2>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae nobis modi laudantium temporibus ut tempora beatae doloribus perspiciatis sapiente quae, omnis a, accusantium reprehenderit excepturi quas odit magni? Totam.
-                                                    </p>
+
+                                                    <div className="produto mt-3 mb-5 container">
+
+                                                        <h2> Sobre este produto</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae nobis modi laudantium temporibus ut tempora beatae doloribus perspiciatis sapiente quae, omnis a, accusantium reprehenderit excepturi quas odit magni? Totam.
+                                                        </p>
+
+                                                        <br />
+                                                        <hr />
+                                                        <br />
+                                                        <br />
+                                                        <h2>Pode Gostar também de...</h2 >
+                                                        {/*<center>
+                                                            <h1 className="titulo">Explore Nossa Loja</h1>
+                                                        </center>*/}
+                                                        <div className="container-flui ">
+                                                            <div className="d-flex gap-2 overflow-x-scroll sroll-x">
+                                                                {
+                                                                    Homeproduto.slice(0, 10).map((curElm) => {
+                                                                        return (
+                                                                            <div className=" mx-2 " key={curElm.id}>
+                                                                                <div title={`Clique para ver ` + curElm.Titulo} className="box">
+                                                                                    <div className="img_box">
+                                                                                        <img src={curElm.Img} alt={curElm.Titulo} />
+                                                                                        <div className="icone">
+                                                                                            <li onClick={() => addcarrinho(curElm)}> <PiShoppingCartBold /></li>
+                                                                                            <li onClick={() => ver(curElm)}><ImEye /></li>
+                                                                                            <li> <AiOutlineHeart /></li>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div onClick={() => ver(curElm)} className="detalhe d-t">
+                                                                                        <p>{curElm.Cat}</p>
+                                                                                        <h5>{curElm.Titulo}</h5>
+                                                                                        <h4>{curElm.Preco} kz</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        )
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,8 +177,8 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                             <h6>O produto mais recente</h6>
                             <h3>Iphone 12 Pro Ma Pro Max</h3>
                             <p>170.000.00Kz</p>
-                                <Link to='/produto' className='link bg-dark btn btn-dark'>Compre agora</Link>
-                         
+                            <Link to='/produto' className='link bg-dark btn btn-dark'>Compre agora</Link>
+
                         </div>
                     </div>
                     <div className="img_box col-12  pt-md-0 py-4 py-md-3 text-center text-start-md  text-md-start col-md-5">
@@ -146,7 +186,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                     </div>
                 </div>
             </div>
-            
+
             <div className="produto mt-3 mb-5 container">
                 <br />
                 <h2>Mais Produtos</h2 >
@@ -159,7 +199,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                             Homeproduto.slice(7).map((curElm) => {
                                 return (
                                     <div className=" col-12 col-sm-6 col-md-4 col-lg-3  col-xxl-3" key={curElm.id}>
-                                        <div title={`Clique para ver `+curElm.Titulo} className="box">
+                                        <div title={`Clique para ver ` + curElm.Titulo} className="box">
                                             <div className="img_box">
                                                 <img src={curElm.Img} alt={curElm.Titulo} />
                                                 <div className="icone">
