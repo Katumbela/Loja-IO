@@ -1,11 +1,16 @@
+import mac1 from './img/mac1.jpg'
+import mac2 from './img/mac2.jpg'
+import mac3 from './img/mac3.jpeg'
+
+
 const homeproduto = 
 [
     {
         id:1,
-        Titulo:"Normal 500Gb HDMI HD ",
-        Cat:"PlayStation",
+        Titulo:"MacBook Pro 2012 ",
+        Cat:"Computadores",
         Preco: "100000",
-        Img: "./img/tp7.jpg"
+        Img: mac1
     },
     {
         id:2,
