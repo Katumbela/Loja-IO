@@ -1,6 +1,9 @@
 import mac1 from './img/mac1.jpg'
 import mac2 from './img/mac2.jpg'
 import mac3 from './img/mac3.jpeg'
+import ip1 from './img/ip1.jpg'
+import ip2 from './img/ip2.jpg'
+import ip3 from './img/ip3.webp'
 
 
 const homeproduto = 
@@ -11,6 +14,41 @@ const homeproduto =
         Cat:"Computadores",
         Preco: "100000",
         Img: mac1
+    },
+    {
+        id:11,
+        Titulo:"MacBook Pro 2012 ",
+        Cat:"Computadores",
+        Preco: "100000",
+        Img: mac2
+    },
+    {
+        id:100,
+        Titulo:"MacBook Pro 2012 ",
+        Cat:"Computadores",
+        Preco: "100000",
+        Img: mac3
+    },
+    {
+        id:110,
+        Titulo:"Iphone 12",
+        Cat:"Telefones",
+        Preco: "100000",
+        Img: ip1
+    },
+    {
+        id:101,
+        Titulo:"Iphone 11 ",
+        Cat:"Iphones",
+        Preco: "100000",
+        Img: ip2
+    },
+    {
+        id:102,
+        Titulo:"Iphone 11 ",
+        Cat:"Iphones",
+        Preco: "100000",
+        Img: ip3
     },
     {
         id:2,
