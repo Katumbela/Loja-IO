@@ -23,8 +23,8 @@ const Nav = ({ searchbtn }) => {
         <span>Entregas grátis para compras acima de 100.000kz</span>
       </div>
 
-      <div className='main_header'>
-        <div className='container d-flex justify-content-between'>
+      <div className='main_header bg-white'>
+        <div className='container bg-white d-flex justify-content-between'>
           <img src={logo} alt='logo' className='logo' />
 
           <div className='caixa_pesquisa'>
@@ -74,7 +74,7 @@ const Nav = ({ searchbtn }) => {
               isAuthenticated ?
                 <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><FiLogOut /></button>
                 :
-                <Link to='/login' className='link login-btn'>Entrar <FaArrowRight className='icon'/></Link>
+                <Link to='/login' className='link login-btn'>Entrar <FaArrowRight className='icon' /></Link>
             }
           </div>
         </div>

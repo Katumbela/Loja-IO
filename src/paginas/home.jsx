@@ -43,7 +43,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                                               Telefone recondicionado, vindo do lugar x ou algo parecido a isto, sei lá
                                             </p>
                                             <div className="d-flex gap-4 btns-buy flex-wrap ">
-                                              <button className="w-sm-100">Adicionar ao carrinho <BsCartPlus /></button>
+                                              <button onClick={() => addcarrinho(curElm)} className="w-sm-100">Adicionar ao carrinho <BsCartPlus /></button>
                     
                                               <button className="w-sm-100">Comprar agora <BsCart2 /></button>
                                             </div>
@@ -67,7 +67,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                 <div className="text-center container">
 
                     <span>I O</span> <br />
-                    <button className="btn plus">Todos Produtos</button>
+                    <Link to={'/produtos'} className="btn plus">Todos Produtos</Link>
                 </div>
             </div>
 
@@ -107,7 +107,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                             Homeproduto.map((curElm) => {
                                 return (
                                     <div className=" col-12 col-sm-6 col-md-4 col-lg-3  col-xxl-3" key={curElm.id}>
-                                        <div className="box">
+                                        <div  onClick={() => ver(curElm)} className="box">
                                             <div className="img_box">
                                                 <img src={curElm.Img} alt={curElm.Titulo} />
                                                 <div className="icone">
