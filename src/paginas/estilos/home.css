@@ -55,12 +55,12 @@
   }
 
 
-  .top_banner .container button{
+  .plus{
     background-color: white;
     transition: all .2s ease-out;
     /*box-shadow: 2px 4px 9px rgb(149, 214, 254);*/
   }
-.top_banner .container button:hover{
+.plus:hover{
   background: none;
   border: 2px solid white;
   color: white;
@@ -220,13 +220,12 @@ margin-top: 1rem;
 .produto .container-flui .box .img_box
 {
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #e2e0e0;
+  justify-content: center;
+  padding: 5px;
 }
 .produto .container-flui .box .img_box img
 {
   width: 100%;
-  margin: auto!important;
   transition: all .2s ease-in;
 }
 
@@ -239,7 +238,7 @@ margin-top: 1rem;
 
 .produto .container-flui .box .img_box .icone
 {
-  /*z-index: 1;*/
+  z-index: 8;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -297,12 +296,8 @@ margin-top: 1rem;
 {
   font-size: 16px;
   margin-top: 5px;
-  color: #010f1c;
+  color: #010f1c!important;
   transition: 0.5s;
-}
-.produto .container-flui .box:hover  .detalhe h3
-{
-  color:#0989ff
 }
 .produto .container-flui .box .detalhe h4
 {
@@ -568,4 +563,9 @@ box-shadow: #9a9a9a 2px 3px 15px ;
     transition: all .3s ease;
     transform: scale(1.05);
   }
+}
+
+.d-t h3 {
+  font-size: 16px;
+  font-weight: bold;
 }

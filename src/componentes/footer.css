@@ -1,102 +1,46 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
+.foot {
+    background: #000;
 }
-.footer
-{
-    padding: 30px 40px;
-    width: 100%;
-    border-top: 1px solid #e2e0e0;
-    height: 20px;
+
+.foot .container .logo-f {
+    width: 5em;
+    border-radius: 20px;
+    margin-left: 2rem;
 }
-.footer .container
-{
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
+.foot .container .icone ul {
+    display: inline-flex;
+    list-style-type: none;
+    justify-content: left;
+    margin: .5em;
 }
-.footer .container .sobre
-{
-    width: 30%;
+.foot .container .icone ul li {
+    
+    margin-right: .6em;
+    color: white;
 }
-.footer .container .sobre .logo img
-{
-    margin-top: -50px;
+
+.c ul {
+    margin-left: 1.5rem;
 }
-.footer .container .sobre .icone
-{
-    margin-top: 20px;
-    display:flex;
-}
-.footer .container .sobre .icone li{
-    margin-left: 20px;
-    list-style: none;
-    padding: 10px 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.footer .container .sobre .icone li:hover
-{
-    background: #0989ff;
-    color:#fff;
-    border-radius: 5px;
+
+.c h3 {
+    margin-left: 2rem;
+    color: white;
+    font-weight: bold;
     font-size: 16px;
 }
-.footer .container .conta
-{
-    margin-right: 100px;
-    margin-top: 30px;
-}
-.footer .container .conta h3
-{
-    font-size: 32px;
-    color: #010f1c;
-}
-.footer .container .conta ul
-{
-    margin-top: 10px;
-    margin-left: 20px;
-}
-.footer .container .conta ul li
-{
-    margin-top: 5px;
-    color: #010f1c;
+
+.c ul li {
+    color: white;
     font-size: 14px;
-    cursor: pointer;
-    transition: 0.5s;
+    list-style-type: none;
 }
-.footer .container .conta ul li:hover
-{
-    color: #0989ff;
+
+.copy {
+    padding: .8em 0;
+    font-size: 12px;
+    text-decoration: none;
 }
-.footer .container .pagina
-{
-    margin-right: 100px;
-    margin-top: 30px;
-}
-.footer .container .pagina h3
-{
-    font-size: 32px;
-    color: #010f1c;
-}
-.footer .container .pagina ul
-{
-    margin-top: 10px;
-    margin-left: 20px;
-}
-.footer .container .pagina ul li
-{
-    margin-top: 5px;
-    color: #010f1c;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.footer .container .pagina ul li:hover
-{
-    color: #0989ff;
+.copy a {
+    text-decoration: none;
 }
