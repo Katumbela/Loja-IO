@@ -49,8 +49,7 @@
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: rgb(194, 0, 223);
-    padding: 20px;
+    background: #027e72;
     border-radius: 90px;
     width: 3rem;
     height: 3rem;
@@ -64,5 +63,6 @@
 
 .chat a {
     color: white;
-    font-size: 25px;
+    margin: auto!important;
+    font-size: 22px;
 }

@@ -47,36 +47,37 @@ const Produto = ({
   const currentItems = produto.slice(startIndex, endIndex);
 
   const [isProdutosFixed, setIsProdutosFixed] = useState(false);
-  
-  
+
+
   useEffect(() => {
     const SCROLL_THRESHOLD = 25; // Ajuste conforme necessário
-  
+
     const handleScroll = () => {
       const produtosElement = document.querySelector('.categorias');
       if (produtosElement) {
         const shouldFix = window.scrollY >= SCROLL_THRESHOLD;
-  
+
         setIsProdutosFixed(shouldFix);
       }
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
 
   return (
     <>
       {fechar ? (
+
         <div className='detalhe_produto py-5'>
           <div className='container-fluid '>
             <button onClick={() => setFechar(false)} className='btnfechar'><BiArrowBack /> Voltar</button>
             {
-              homeproduto.map((curElm) => {
+              detalhe.map((curElm) => {
                 return (
                   <div className='boxproduto py-5'>
                     <div className="row w-100 my-3">
@@ -99,17 +100,57 @@ const Produto = ({
                           Telefone recondicionado, vindo do lugar x ou algo parecido a isto, sei lá
                         </p>
                         <div className="d-flex gap-4 btns-buy flex-wrap ">
-                          <button className="w-sm-100">Adicionar ao carrinho <BsCartPlus /></button>
+                          <button onClick={() => addcarrinho(curElm)} className="w-sm-100 btn-outline">Adicionar ao carrinho <BsCartPlus /></button>
 
                           <button className="w-sm-100">Comprar agora <BsCart2 /></button>
                         </div>
                       </div>
                       <div className="col-12 px-4 px-md-5 mt-md-5 container mt-4">
 
-                        <h2> Sobre este produto</h2>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae nobis modi laudantium temporibus ut tempora beatae doloribus perspiciatis sapiente quae, omnis a, accusantium reprehenderit excepturi quas odit magni? Totam.
-                        </p>
+
+                        <div className="produto mt-3 mb-5 container">
+
+                          <h2> Sobre este produto</h2>
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae nobis modi laudantium temporibus ut tempora beatae doloribus perspiciatis sapiente quae, omnis a, accusantium reprehenderit excepturi quas odit magni? Totam.
+                          </p>
+
+                          <br />
+                          <hr />
+                          <br />
+                          <br />
+                          <h5>Pode Gostar também de...</h5 >
+                          {/*<center>
+                                          <h1 className="titulo">Explore Nossa Loja</h1>
+                                      </center>*/}
+                          <div className="container-flui ">
+                            <div className="d-flex gap-2 overflow-x-scroll sroll-x">
+                              {
+                                homeproduto.slice(0, 10).map((curElm) => {
+                                  return (
+                                    <div className=" mx-2 " key={curElm.id}>
+                                      <div title={`Clique para ver ` + curElm.Titulo} className="box">
+                                        <div className="img_box">
+                                          <img src={curElm.Img} alt={curElm.Titulo} />
+                                          <div className="icone">
+                                            <li onClick={() => addcarrinho(curElm)}> <PiShoppingCartBold /></li>
+                                            <li onClick={() => ver(curElm)}><ImEye /></li>
+                                            <li> <AiOutlineHeart /></li>
+                                          </div>
+                                        </div>
+                                        <div onClick={() => ver(curElm)} className="detalhe d-t">
+                                          <p>{curElm.Cat}</p>
+                                          <h5>{curElm.Titulo}</h5>
+                                          <h4>{curElm.Preco} kz</h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -172,7 +213,7 @@ const Produto = ({
                 </div>
               </div>
 
-             { /*<center>
+              { /*<center>
                 <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
                   Anterior
                 </button>

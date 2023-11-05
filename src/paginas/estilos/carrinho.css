@@ -35,10 +35,10 @@
 }
 .carcontainer .carrinhovazio button
 {
-    border:5px solid #272b2e;
+    border:5px solid #027e72;
     padding: 10px 20px;
     cursor: pointer;
-    background: #272b2e;
+    background: #027e72;
     border-radius: 5%;
     margin-left: 70px;        
 }
@@ -47,36 +47,31 @@
     text-decoration: none;
     color: #fff;
 }
-.carcontainer .conteudo
-{
-    max-width: 100%;
-    padding: 20px 30px;
-}
+
 .carcontainer .conteudo .item_carrinho
 {
-    padding: 20px 30px;
-    display: flex;
     background: #f1f1f1;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.carcontainer .conteudo .item_carrinho .box_img
+
+.carcontainer .conteudo .item_carrinho .box_img 
 {
-    padding: 20px 20px;
-    background: #f1f1f1;
+   display: grid;
+   place-content: center;
+   place-items: center;
 }
 .carcontainer .conteudo .item_carrinho .box_img img
 {
     width: 250px;
-    height: 250px;
+    margin: auto !important;
+    max-width: 10em;
 }
 .carcontainer .item_carrinho .detalhe
 {
-    margin-left: 60px;
     display: flex;
-    margin-top: 30px;
-    padding: 20px 30px;
+    padding: 10px 15px;
 }
 .carcontainer .item_carrinho .detalhe .info h4
 {
@@ -85,6 +80,7 @@
     font-size: 16px;
     color: #9a9a9a;
     font-weight: 100;
+    margin-top: 5px;
     letter-spacing: 1.5px;
 }
 .carcontainer .item_carrinho .detalhe .info h3
@@ -102,39 +98,46 @@
 }
 .carcontainer .conteudo .item_carrinho  .detalhe .info .quantidade
 {
-    margin-top: 10px;
+    margin-top: 2px;
     display: flex;
 }
 .carcontainer .conteudo .item_carrinho  .detalhe .info .quantidade .mais
 {
-    padding: 10px 10px;
-    background: none;
+    background: #000;
     outline: none;
-    border: none;
-    color: #0989ff;
-    font-size: 32px;
+    border: 1px solid white;
+    color: white;
+    height: 1.3rem;
+    width: 1.3rem;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    border-radius: 90px;
+    margin-left: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
     cursor: pointer;
 }
 .carcontainer .conteudo .item_carrinho  .detalhe .info .quantidade .menos
 {
-    padding: 10px 10px;
-    background: none;
+    background: #000;
     outline: none;
-    border: none;
-    color: #0989ff;
-    font-size: 32px;
+    border: 1px solid white;
+    color: white;
+    height: 1.3rem;
+    width: 1.3rem;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    border-radius: 90px;
+    margin-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
     cursor: pointer;
 }
-.carcontainer .conteudo .item_carrinho  .detalhe .info .quantidade input
-{
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 22px;
-    color: #010f1c;
-    width: 50px;
-    margin-left: 20px;
-}
+
 .carcontainer .conteudo .item_carrinho  .detalhe .info .total
 {
     color: #010f1c;
@@ -159,19 +162,71 @@
 .carcontainer .precototal
 {
     margin-top: 30px;
-    margin-left: 80%;
     font-size: 22px;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 .carcontainer .checkout
 {
-    margin-top: 40px;
-    margin-left: 53%;
+    margin-top:20px;
     padding: 10px 20px;
     color: #fff;
+    height: 3rem;
     border: none;
     outline: none;
-    background: #0989ff;
+    border: 2px solid #027e72;
+    background: #027e72;
     cursor: pointer;
+}
+.carcontainer .checkout:hover
+{
+    margin-top:20px;
+    padding: 10px 20px;
+    color: #027e72;
+    border: 2px solid #027e72;
+    outline: none;
+    background:transparent;
+    cursor: pointer;
+}
+
+.remover {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: all .2s ease-in;
+}
+
+
+.remover:hover,
+.remover:focus {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    transition: all .3s ease-out;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white!important;
+    background: red!important;
+    border-radius: 90px;
+}
+
+.cc{
+    width: 100%;
+}
+
+@media (min-width: 760px) {
+    
+   
+.cc{
+    max-width: 70vw;
+} 
+    
+}
+
+
+.login-btn {
+    border-radius: 0 !important;
 }

@@ -31,22 +31,15 @@
 }
 
 .caixa_pesquisa input {
-    border: 1px solid #147eff;
+    border: 1px solid #027e72;
     padding: 10px 15px ;
     outline: none;
     height: 3em;
     width: 100%;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-}
-.caixa_pesquisa button {
-    border: 1px solid #147eff;
-    padding: 10px 20px ;
-    background: #147eff;
     border-bottom-right-radius: 40px;
     border-top-right-radius: 40px;
-    height: 3em;
-    color: white;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 .caixa_pesquisa, .icone1  {
    align-items: center;
@@ -66,8 +59,8 @@
 
 .header {
 background: #f3f3f3;
-/*border-bottom: 2px solid #147eff;*/
-border-bottom: 2px solid #147eff;
+/*border-bottom: 2px solid #027e72;*/
+border-bottom: 2px solid #027e72;
 }
 
 .header .nav ul  {
@@ -92,7 +85,7 @@ border-bottom: 2px solid #147eff;
     transition: all.2s ease-out;
     padding: 10px 15px;
      text-decoration: none;
-     background-color: #147eff;
+     background-color: #027e72;
      color: #ffffff!important;
      border-radius: 5px;
   }
@@ -107,8 +100,8 @@ border-bottom: 2px solid #147eff;
 .login-btn {
     text-decoration: none;
     padding: 8px 15px;
-    background-color: #147eff;
-    color: white;
+    background-color: #027e72;
+    color: white!important;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -126,7 +119,46 @@ border-bottom: 2px solid #147eff;
 
 @media (max-width: 500px) {
         
-    .icone1  {
-       display: none !important;
+  
+    .icone1 .cart  {
+        margin-right: .5rem;
+        margin-left: .3rem;
     }
+
+
+    .main_header .logo {
+        margin-right: .05rem;
+    }
+        .icone1 .fav  {
+        position: fixed;
+        bottom: 50vh;
+        display: none;
+        right: 2rem;
+        z-index: 9;
+    }
+}
+
+.thumb {
+    position: absolute;
+    top: -.1rem;
+    right: -.8rem;
+    font-size: 14px;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    border: 2px solid #027e72;
+    border-radius: 90px;
+    height: 1.3rem;
+    font-weight: bold;
+    width: 1.3rem;
+    color: #027e72;
+}
+
+
+.link {
+    color: #027e72!important;
+}
+
+.link:hover {
+    color: #027e72 !important;
 }

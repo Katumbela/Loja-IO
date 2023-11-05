@@ -52,7 +52,7 @@ const App = () =>{
   return(
     <>
       <BrowserRouter>
-    <Nav searchbtn={searchbtn}/>
+    <Nav searchbtn={searchbtn} cart={carrinho} favs = {favoritos}/>
       <Rout produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
       <Footer/> 
     </BrowserRouter>

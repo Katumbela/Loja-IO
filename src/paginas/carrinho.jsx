@@ -43,37 +43,47 @@ const Carrinho = ({ carrinho, setCarrinho }) => {
                     carrinho.length === 0 &&
                     <center>
                         <div className=' py-5 my-5'>
-                            <BsCart4 className='fs-1'/>
+                            <BsCart4 className='fs-1' />
                             <br />
                             <br />
                             <h2 className='vazio'>Seu carrinho está vazio</h2>
                             <br />
                             <Link to='/produto' className='btn btn-dark rounded-0'>Veja os produtos</Link>
-                          
+
                         </div>
                     </center>
                 }
-                <div className='conteudo'>
+
+                <div className='conteudo container'>
+                    {
+                        carrinho.length > 0 &&
+                        <div className='container-md my-2 cc d-flex justify-content-between'>
+                            <h2 className='my-auto precototal'>total:{Precototal} AOA</h2>
+
+                            <button className='checkout'>Checkout</button>
+                        </div>
+                    }
                     {
                         carrinho.map((curElm) => {
                             return (
-                                <div className='item_carrinho' key={curElm.id}>
-                                    <div className='box_img'>
-                                        <img src={curElm.Img} alt={curElm.Titulo}></img>
-                                    </div>
-                                    <div className='detalhe'>
-                                        <div className='info'>
-                                            <h4>{curElm.Cat}</h4>
-                                            <h3>{curElm.Titulo}</h3>
-                                            <p>{curElm.Preco}kz</p>
-                                            <div className='quantidade'>
-                                                <button className='mais' onClick={() => mais(curElm)}>+</button>
-                                                <input type='text' value={curElm.quantidade}></input>
-                                                <button className='menos' onClick={() => menos(curElm)}>-</button>
-                                            </div>
-                                            <h4>total:{curElm.Preco * curElm.quantidade}kz</h4>
-                                            <div className='fechar'>
-                                                <button className='remover' onClick={() => remover(curElm)}><AiOutlineClose /></button>
+                                <div className="container-md cc">
+                                    <div className='item_carrinho row' key={curElm.id}>
+                                        <div className='box_img col-4 col-md-3 '>
+                                            <img src={curElm.Img} alt={curElm.Titulo} className='' />
+                                        </div>
+                                        <div className='detalhe col-8 col-md-9 position-relative'>
+                                            <div className='info'>
+                                                <h3>{curElm.Titulo}</h3>
+                                                <p>Preço: {curElm.Preco}kz</p>
+                                                <div className='quantidade'>
+                                                    <button className='menos' onClick={() => menos(curElm)}>-</button>
+                                                    <span className='my-auto' > {curElm.quantidade} </span>
+                                                    <button className='mais' onClick={() => mais(curElm)}>+</button>
+                                                </div>
+                                                <h4>{curElm.quantidade + ' x ' + curElm.Preco} aoa</h4>
+                                                <div className='fechar'>
+                                                    <button title={'Remover este produto'} className='remover text-danger' onClick={() => remover(curElm)}><BsTrash3 /></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -82,14 +92,18 @@ const Carrinho = ({ carrinho, setCarrinho }) => {
                         })
                     }
 
+                    {
+                        carrinho.length > 0 &&
+                        <div className='container d-flex justify-content-between my-3 cc'>
+                            <div className="">
+                                <h2 className='precototal'>total:{Precototal} AOA</h2>
+                                <span className="text-secondary">Ship fee: 0 AOA</span> <br />
+                                <span className="text-secondary">Discount: 0 AOA</span> <br />
+                            </div>
+                            <button className='checkout'>Checkout</button>
+                        </div>
+                    }
                 </div>
-                {
-                    carrinho.length > 0 &&
-                    <>
-                        <h2 className='precototal'>total:{Precototal}kz</h2>
-                        <button className='checkout'>Checkout</button>
-                    </>
-                }
             </div>
         </>
     )

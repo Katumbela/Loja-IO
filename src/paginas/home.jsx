@@ -25,7 +25,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                                         <div className='boxproduto py-5'>
                                             <div className="row w-100 my-3">
                                                 <div className=' text-center col-12 col-md-4 col-xl-5 '>
-                                                    <img src={curElm.Img} alt={curElm.Titulo} className="img-see my-auto" />
+                                                    <img src={curElm.Img} alt={curElm.Titulo} className="img-see my-2" />
                                                 </div>
 
                                                 <div className='detalhe px-4 px-md-0 col-12 col-md-8 col-xl-7 '>
@@ -43,7 +43,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                                                         Telefone recondicionado, vindo do lugar x ou algo parecido a isto, sei lá
                                                     </p>
                                                     <div className="d-flex gap-4 btns-buy flex-wrap ">
-                                                        <button onClick={() => addcarrinho(curElm)} className="w-sm-100">Adicionar ao carrinho <BsCartPlus /></button>
+                                                        <button onClick={() => addcarrinho(curElm)} className="w-sm-100 btn-outline">Adicionar ao carrinho <BsCartPlus /></button>
 
                                                         <button className="w-sm-100">Comprar agora <BsCart2 /></button>
                                                     </div>

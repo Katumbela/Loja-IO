@@ -32,7 +32,7 @@
 }
 .produtos  .filtro .categorias h3
 {
-    color: #0071db;
+    color: #027e72;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
@@ -66,7 +66,7 @@
     cursor: pointer;
     margin-left: 0;
     border-radius: 8px;
-    background: #0071db;
+    background: #027e72;
 }
 
 
@@ -98,4 +98,8 @@
   .img-see {
     width: 100%;
     max-width: 18em;
+  }
+
+  .scroll-x {
+    overflow-x: auto!important;
   }

@@ -18,13 +18,17 @@
 
   }
 
+  .text-primary {
+    color: #027e72!important;
+  }
+
   ::-webkit-scrollbar-thumb {
     background: #d9edff;
     border-radius: 90px;
     cursor: pointer;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0989ff;
+    background: #027e72;
     border-radius: 90px;
   }
 
@@ -84,7 +88,7 @@ margin-bottom: 40px;
     border:5px solid #272b2e;
     padding: 10px 20px;
     cursor: pointer;
-    background: #272b2e;
+    background: #027e72;
     border-radius: 5%;
 }
 .container1 {
@@ -280,7 +284,7 @@ margin-top: 1rem;
 }
 .produto .container-flui .box .img_box .icone li:hover
 {
-  background:#0989ff;
+  background:#027e72;
   color:#fff
 }
 .produto .container-flui .box .detalhe
@@ -304,7 +308,7 @@ margin-top: 1rem;
 {
   margin-top:5px;
   font-size: 14px;
-  color:#0989ff;
+  color:#027e72;
   letter-spacing: 1px;
 }
 
@@ -344,10 +348,10 @@ margin-top: 1rem;
 }
 .banner .containe .detalhe button
 {
-  border:5px solid #0989ff;
+  border:5px solid #027e72;
   padding: 10px 20px;
   cursor: pointer;
-  background: #0989ff;
+  background: #027e72;
   border-radius: 5%;
   margin-top: 10px;
 
@@ -385,7 +389,7 @@ text-decoration: none;
     top: 1.5rem;
     left: 1.5rem;
     outline: none;
-    background: black;
+    background: #027e72;
     font-size: 20px;
     color: #fff;
     padding: 5px 15px;
@@ -427,22 +431,48 @@ text-decoration: none;
     padding: 8px 18px;
     font-size: 16px;
     color: #fff;
-    background: #010f1c;
-    border: 2px solid #000;
+    background: #027e72;
+    border: 2px solid #027e72;
     outline: none;
     cursor: pointer;
     transition: all .2s ease-in;
     border-radius: 5px;
     font-weight: bold;
 }
+
+
+.btn-outline:hover {
+  
+  color: white!important;
+  background: #027e72!important;
+  border: 2px solid #027e72!important;
+  outline: none!important;
+  cursor: pointer!important;
+  transition: all .2s ease-in;
+  border-radius: 5px!important;
+  font-weight: bold!important;
+
+}
+
+.btn-outline 
+{
+  background: transparent!important;
+  border: 2px solid #027e72!important;
+  transition: all .2s ease-out!important;
+  color: #027e72!important;
+  font-weight: bold!important;
+  }
+
+.text-warning {
+  color: #027e72 !important;
+}
 .detalhe_produto .container-fluid .boxproduto .detalhe button:hover
 {
 background: transparent;
-border: 2px solid #000;
+border: 2px solid #027e72;
 transition: all .2s ease-out;
-color: #000;
+color: #027e72;
 font-weight: bold;
-box-shadow: #9a9a9a 2px 3px 15px ;
 }
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaArrowRight, FaSearch, FaTruckMoving, FaUser } from 'react-icons/fa';
+import { FaArrowRight, FaSearch, FaSignInAlt, FaTruckMoving, FaUser } from 'react-icons/fa';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart3 } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
@@ -11,9 +11,19 @@ import './nav.css'
 import logo from '../img/logo.png'
 
 
-const Nav = ({ searchbtn }) => {
+const Nav = ({ searchbtn, cart, favs }) => {
   const [search, setSearch] = useState()
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+
+  let qntC = 0;
+
+  cart.map((item) => (qntC += item.quantidade));
+
+  let qntF = 0;
+
+  favs.map((item) => (qntF += item.quantidade));
+
+
   return (
     <>
       {/*<div className='d-flex livre justify-content-center'>
@@ -25,11 +35,12 @@ const Nav = ({ searchbtn }) => {
 
       <div className='main_header bg-white'>
         <div className='container bg-white d-flex justify-content-between'>
-          <img src={logo} alt='logo' className='logo' />
+          <a href="/">
+            <img src={logo} alt='logo' className='logo' />
+          </a>
 
           <div className='caixa_pesquisa'>
             <input type='text' value={search} placeholder='Pesquise o seu produto' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>
-            <button onClick={() => searchbtn(search)}><FaSearch /></button>
           </div>
 
           <div className='icone'>
@@ -45,8 +56,8 @@ const Nav = ({ searchbtn }) => {
               )
             }
             <div className='icone1'>
-              <Link to="/favoritos" className='link'><AiOutlineHeart /></Link>
-              <Link to="/carrinho" className='link'><BsCart3 /></Link>
+              <Link to="/favoritos" className='link position-relative thumb-item fav'> {qntF >= 1 && <span className="thumb">{qntF}</span>} <AiOutlineHeart /></Link>
+              <Link to="/carrinho" className='link position-relative thumb-item cart'>{qntC >= 1 && <span className="thumb">{qntC}</span>} <BsCart3 /></Link>
             </div>
           </div>
         </div>
@@ -62,10 +73,10 @@ const Nav = ({ searchbtn }) => {
                 <Link to='/produto' className='link'>Produto</Link>
               </li>
               <li>
-                <Link to='/sobre' className='link'>Sobre</Link>
+                <Link to='/sobre' className='link position-relative'>Sobre</Link>
               </li>
               <li>
-                <Link to='/contato' className='link'>Contacto</Link>
+                <Link to='/contato' className='link '>Contacto </Link>
               </li>
             </ul>
           </div>
@@ -74,7 +85,7 @@ const Nav = ({ searchbtn }) => {
               isAuthenticated ?
                 <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><FiLogOut /></button>
                 :
-                <Link to='/login' className='link login-btn'>Entrar <FaArrowRight className='icon' /></Link>
+                <Link to='/login' className=' login-btn'>Entrar <FaSignInAlt className='icon ms-1' /></Link>
             }
           </div>
         </div>
