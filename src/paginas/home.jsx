@@ -1,6 +1,6 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { BsCart2, BsCart3, BsCartPlus, BsFillBarChartFill, BsStar, BsStarFill, BsStarHalf, BsTruck } from 'react-icons/bs';
+import { Link, NavLink } from "react-router-dom"
+import { BsArrowRight, BsCart2, BsCart3, BsCartPlus, BsFillBarChartFill, BsStar, BsStarFill, BsStarHalf, BsTruck } from 'react-icons/bs';
 import { BiArrowBack, BiDollarCircle } from 'react-icons/bi';
 import { MdCardMembership } from 'react-icons/md';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
@@ -170,6 +170,9 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                     </div>
                 </div>
             </div>
+            <center className="my-4">
+                <a href={'/produto'} className="btn-primary btn">Todos os produtos <BsArrowRight/> </a>
+            </center>
             <div className="banner mt-2 px-2 mx-0 mx-sm-auto container">
                 <div className="containe row">
                     <div className="detalhe text-center text-start-md  text-md-start col-12 col-md-7">
@@ -177,7 +180,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                             <h6>O produto mais recente</h6>
                             <h3>Iphone 12 Pro Ma Pro Max</h3>
                             <p>170.000.00Kz</p>
-                            <Link to='/produto' className='link bg-dark btn btn-dark'>Compre agora</Link>
+                            <Link to='/produto' className='lin btn-primary rounded-0 btn '>Compre agora</Link>
 
                         </div>
                     </div>

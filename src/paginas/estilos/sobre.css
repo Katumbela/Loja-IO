@@ -7,59 +7,61 @@
 }
 .sobre
 {
-    padding: 30px 40px;
+    padding: 30px 10px;
     width: 100%;
 }
+
+
 .sobre h2
 {
-    font-size: 42px;
+    font-size: 32px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 300;
-    color: #010f1c;
+    color: #071c01;
     border-bottom: 1px solid grey;
     margin-bottom: 20px;
 }
-.sobre .img
+
+
+
+.sobre h3
 {
-    border-right: 1px solid grey;
-    width: 25%;
-    float: left;
-    margin-top: 20px;
-    height: 300px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #0d1c01;
+    margin-top: 3rem;
+ 
+    margin-bottom: 20px;
 }
-.sobre .img img
-{
-    width: 250px;
-    height: 300px;
+
+
+.btn-primary {
+    background: #027e72;
+    border-color: #027e72;
 }
-.sobre .conteudo
-{
-   margin-top: 60px;
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:focus-within {
+    background: #005e54!important;
+    border-color: #005e54!important;
 }
-.sobre .conteudo p
-{
-   text-align: justify;
-   margin-bottom: 1em;
-   margin-right: 1em;
-   line-height: 1.5em;
-   text-indent: 1em;
+
+.form-control:hover,
+.form-control:focus-visible,
+.form-control:focus-within {
+    border: 1.5px solid #027e72;
+    border-radius: 0;
+    box-shadow: none!important;
 }
-.sobre p
-{
-    text-align: justify;
-    margin-bottom: 1em;
-    line-height: 1.5em;
-    text-indent: 1em;
+
+
+.form-control {
+    border: 1.5px solid #d9d9d9;
+    border-radius: 0;
+
 }
-.sobre .conteudo1
-{
-    margin-top:95px
-}
-.sobre .conteudo1 p
-{
-    text-align: justify;
-    margin-bottom: 1em;
-    line-height: 1.5em;
-    text-indent: 1em;
-}
+

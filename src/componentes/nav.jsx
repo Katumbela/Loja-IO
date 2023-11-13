@@ -68,16 +68,16 @@ const Nav = ({ searchbtn, cart, favs }) => {
             <ul>
               <li>
                 <Link to='/' className='link'>Inicio</Link>
-              </li>
+              </li> 
               <li>
                 <Link to='/produto' className='link'>Produto</Link>
               </li>
               <li>
                 <Link to='/sobre' className='link position-relative'>Sobre</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to='/contato' className='link '>Contacto </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className='loginout'>

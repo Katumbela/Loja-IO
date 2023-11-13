@@ -5,9 +5,10 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Detalheproduto from "../detalheproduto";
 import "./estilos/produto.css";
-import { BsCart2, BsCartPlus, BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsCamera, BsCamera2, BsCart2, BsCartPlus, BsHeadphones, BsPersonWorkspace, BsPhoneFlip, BsPhoneLandscape, BsPower, BsStar, BsStarFill, BsStarHalf, BsTools, BsWatch } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 import homeproduto from "../homeproduto";
+import { FaBroadcastTower, FaPowerOff, FaProcedures, FaSuperpowers } from "react-icons/fa";
 const Produto = ({
   produto,
   setProduto,
@@ -161,25 +162,25 @@ const Produto = ({
         </div>
       ) : null}
       <div className={`produtos container my-4`}>
-        <h3>Produtos > {categoria}</h3>
+        <h3 className="titulo-produtos">Produtos {'>'} {categoria}</h3>
         <div className="row">
-          <div className="filtro col-12 col-md-3 col-xxl-2">
+          <div className="filtro col-12 col-md-2 col-xxl-2">
             <div className={`categorias ${isProdutosFixed ? 'produtos-fixed shadow-md' : ''}`}>
-              <h3>Busque por categorias</h3>
+              <h3>Categorias</h3>
               <ul>
-                <li className={`${categoria == 'Todos' ? 'ativo' : ''}`} onClick={() => TodosProdutos()}>Todos Produtos</li>
-                <li className={`${categoria == 'Tablet' ? 'ativo' : ''}`} onClick={() => filtterproduto("Tablet")}>Tablet</li>
-                <li className={`${categoria == 'Smart Watch' ? 'ativo' : ''}`} onClick={() => filtterproduto("Smart Watch")}>Smart Watch</li>
-                <li className={`${categoria == 'Headphone' ? 'ativo' : ''}`} onClick={() => filtterproduto("Headphone")}>Headphone</li>
-                <li className={`${categoria == 'Camera' ? 'ativo' : ''}`} onClick={() => filtterproduto("Camera")}>Camera</li>
-                <li className={`${categoria == 'Eletronicos' ? 'ativo' : ''}`} onClick={() => filtterproduto("Eletronicos")}>Electronicos</li>
-                <li className={`${categoria == 'Processador' ? 'ativo' : ''}`} onClick={() => filtterproduto("Processador")}>Processador</li>
-                <li className={`${categoria == 'PowerBank' ? 'ativo' : ''}`} onClick={() => filtterproduto("PowerBank")}>Powerbank</li>
+                <li  className={`${categoria == 'Todos' ? 'ativo' : ''}`} onClick={() => TodosProdutos()}> <span className="icone"><BsCart2/></span> <span className="texto"> Todos <div className="hide-sm">Produtos</div></span></li>
+                <li className={`${categoria == 'Tablet' ? 'ativo' : ''}`} onClick={() => filtterproduto("Tablet")}> <span className="icone"><BsPhoneFlip/></span> <span className="texto">Tablets</span></li>
+                <li className={`${categoria == 'Smart Watch' ? 'ativo' : ''}`} onClick={() => filtterproduto("Smart Watch")}> <span className="icone"><BsWatch/></span> <span className="texto"> Smart Watch</span></li>
+                <li className={`${categoria == 'Headphone' ? 'ativo' : ''}`} onClick={() => filtterproduto("Headphone")}> <span className="icone"><BsHeadphones/></span> <span className="texto"> Headphone</span></li>
+                <li className={`${categoria == 'Camera' ? 'ativo' : ''}`} onClick={() => filtterproduto("Camera")}> <span className="icone"><BsCamera/></span> <span className="texto"> Camera</span></li>
+                <li className={`${categoria == 'Eletronicos' ? 'ativo' : ''}`} onClick={() => filtterproduto("Eletronicos")}><span className="icone"><BsTools/></span>  <span className="texto"> Electronicos</span></li>
+                <li className={`${categoria == 'Processador' ? 'ativo' : ''}`} onClick={() => filtterproduto("Processador")}><span className="icone"><FaBroadcastTower/></span> <span className="texto">Processador</span></li>
+                <li className={`${categoria == 'PowerBank' ? 'ativo' : ''}`} onClick={() => filtterproduto("PowerBank")}><span className="icone"><BsPower/></span>  <span className="texto">Powerbank</span></li>
 
               </ul>
             </div>
           </div>
-          <div className="produto col-12 col-md-9 col-xxl-10">
+          <div className="produto col-12 col-md-10 col-xxl-10">
 
             <div className=" container">
               {/*<center>
