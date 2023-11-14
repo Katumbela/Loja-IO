@@ -76,7 +76,7 @@ const Produto = ({
 
         <div className='detalhe_produto py-5'>
           <div className='container-fluid '>
-            <button onClick={() => setFechar(false)} className='btnfechar'><BiArrowBack /> Voltar</button>
+            <button onClick={() => setFechar(false)} className='btnfechar' title="Voltar"><BiArrowBack /> </button>
             {
               detalhe.map((curElm) => {
                 return (
@@ -166,9 +166,9 @@ const Produto = ({
         <div className="row">
           <div className="filtro col-12 col-md-2 col-xxl-2">
             <div className={`categorias ${isProdutosFixed ? 'produtos-fixed shadow-md' : ''}`}>
-              <h3>Categorias</h3>
+              <h3 className="cat-t">Categorias</h3>
               <ul>
-                <li  className={`${categoria == 'Todos' ? 'ativo' : ''}`} onClick={() => TodosProdutos()}> <span className="icone"><BsCart2/></span> <span className="texto"> Todos <div className="hide-sm">Produtos</div></span></li>
+                <li  className={`${categoria == 'Todos' ? 'ativo' : ''}`} onClick={() => TodosProdutos()}> <span className="icone"><BsCart2/></span> <span className="texto todos-texto"> Todos <div className="hide-sm">Produtos</div></span></li>
                 <li className={`${categoria == 'Tablet' ? 'ativo' : ''}`} onClick={() => filtterproduto("Tablet")}> <span className="icone"><BsPhoneFlip/></span> <span className="texto">Tablets</span></li>
                 <li className={`${categoria == 'Smart Watch' ? 'ativo' : ''}`} onClick={() => filtterproduto("Smart Watch")}> <span className="icone"><BsWatch/></span> <span className="texto"> Smart Watch</span></li>
                 <li className={`${categoria == 'Headphone' ? 'ativo' : ''}`} onClick={() => filtterproduto("Headphone")}> <span className="icone"><BsHeadphones/></span> <span className="texto"> Headphone</span></li>

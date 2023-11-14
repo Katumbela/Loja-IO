@@ -2,11 +2,11 @@ import React from "react";
 import "./estilos/sobre.css";
 import logo from "../img/logo.png";
 
-const Sobre = () => {
+const PoliticasR = () => {
   return (
     <div className="container">
       <div className="sobre">
-        <h2>Sobre</h2>
+        <h2>Políticas de Reembolso</h2>
         <br />
         <div className="row">
           <div className="col-12 col-sm-10">
@@ -95,4 +95,4 @@ const Sobre = () => {
     </div>
   );
 };
-export default Sobre;
+export default PoliticasR;

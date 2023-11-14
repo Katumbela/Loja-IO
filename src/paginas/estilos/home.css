@@ -498,9 +498,13 @@ font-weight: bold;
       transform: translateX(-160px);
     }
 */
-  .login-btn {
-    display: none!important;
-  }
+.login-btn {
+  /* display: none!important; */
+}
+.login-btn .texto {
+  display: none!important;
+  
+}
 
   .destaque .container-lg
   {

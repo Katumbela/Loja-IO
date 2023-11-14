@@ -18,7 +18,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
 
                     <div className='detalhe_produto py-5'>
                         <div className='container-fluid '>
-                            <button onClick={() => setFechar(false)} className='btnfechar'><BiArrowBack /> Voltar</button>
+                            <button title="Voltar" onClick={() => setFechar(false)} className='btnfechar'><BiArrowBack /> </button>
                             {
                                 detalhe.map((curElm) => {
                                     return (
@@ -107,7 +107,7 @@ const Home = ({ detalhe, ver, fechar, setFechar, addcarrinho }) => {
                 <div className="text-center container">
 
                     <span>I O</span> <br />
-                    <Link to={'/produtos'} className="btn plus">Todos Produtos</Link>
+                    <Link to={'/produto'} className="btn plus">Todos Produtos</Link>
                 </div>
             </div>
 

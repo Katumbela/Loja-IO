@@ -64,8 +64,8 @@ const Nav = ({ searchbtn, cart, favs }) => {
       </div>
       <div className='header'>
         <div className='container'>
-          <div className='nav'>
-            <ul>
+          <div className='nav mx-auto'>
+            <ul className='mx-auto'>
               <li>
                 <Link to='/' className='link'>Inicio</Link>
               </li> 
@@ -85,7 +85,7 @@ const Nav = ({ searchbtn, cart, favs }) => {
               isAuthenticated ?
                 <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><FiLogOut /></button>
                 :
-                <Link to='/login' className=' login-btn'>Entrar <FaSignInAlt className='icon ms-1' /></Link>
+                <Link to='/login' className=' login-btn'> <span className="texto">Login</span> <FaSignInAlt className='icon ms-1' /></Link>
             }
           </div>
         </div>
