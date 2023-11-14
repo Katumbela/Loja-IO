@@ -3,7 +3,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './estilos/carrinho.css'
 import { BsCart4, BsTrash3 } from 'react-icons/bs';
-const Carrinho = ({ carrinho, setCarrinho }) => {
+import Nav from '../componentes/nav';
+import Footer from '../componentes/footer';
+const Carrinho = ({cart, favs, searchbtn, carrinho, setCarrinho }) => {
     // aumentar quantidade do poduto
     const mais = (produto) => {
         const existe = carrinho.find((x) => {
@@ -38,6 +40,8 @@ const Carrinho = ({ carrinho, setCarrinho }) => {
 
     return (
         <>
+
+<Nav searchbtn={searchbtn} cart={cart} favs = {favs} />
             <div className='carcontainer'>
                 {
                     carrinho.length === 0 &&
@@ -105,6 +109,8 @@ const Carrinho = ({ carrinho, setCarrinho }) => {
                     }
                 </div>
             </div>
+
+            <Footer />
         </>
     )
 }

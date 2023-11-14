@@ -230,3 +230,8 @@
 .login-btn {
     border-radius: 0 !important;
 }
+
+.fs-icon {
+    font-size: 60px;
+    margin: 3.5rem auto;
+}

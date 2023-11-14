@@ -4,6 +4,10 @@ import Rout from './rout';
 import {BrowserRouter} from 'react-router-dom';
 import Footer from './componentes/footer';
 import Detalheproduto from './detalheproduto';
+import Swal from 'sweetalert2';
+
+import { useHistory } from 'react-router-dom';
+
 const App = () =>{
    //Favoritando Produtos
    const [favoritos, setFavoritos] = useState([])
@@ -30,31 +34,53 @@ const App = () =>{
   }
   // adicionando ao carrinho
    
-  const addcarrinho = (produto) =>
-  {
-    const existe = carrinho.find((x) =>
-    {
-      return x.id === produto.id
-    })
-    if(existe)
-    {
-      alert("Este produto já foi adicionado ao carrinho")
-    }
-    else
-    {
-      setCarrinho([...carrinho, {...produto, quantidade:1}])
-      alert("O produto foi adicionado ao carrinho")
-    }
-  } 
+const addcarrinho = (produto) => {
+  const existe = carrinho.find((x) => x.id === produto.id);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // const history = useHistory();
+
+  if (existe) {
+    Swal.fire({
+      title: 'Produto já adicionado',
+      text: 'Este produto já foi adicionado ao carrinho. Deseja finalizar a compra?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Finalizar compra',
+      cancelButtonText: 'Continuar comprando',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirecionar para a página de finalização de compra
+        // history.push('/finalizar');
+      } else {
+        // Continuar comprando (fechar o popup)
+        Swal.close();
+      }
+    });
+  } else {
+    setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
+    Swal.fire('Produto adicionado', 'O produto foi adicionado ao carrinho', 'success');
+  }
+};
   console.log(carrinho)
   // Favoritando
-  const addfavorito = (produto) =>{}
+
+
+  const addfavorito = (produto) => {
+    const existe = favoritos.find((x) => x.id === produto.id);
+  
+    if (existe) {
+      Swal.fire("Produto já adicionado", "Este produto já foi adicionado aos favoritos", "warning");
+    } else {
+      setFavoritos([...favoritos, { ...produto, quantidade: 1 }]);
+      Swal.fire("Produto adicionado", "O produto foi adicionado aos favoritos", "success");
+    }
+  };
+
   return(
     <>
       <BrowserRouter>
-    <Nav searchbtn={searchbtn} cart={carrinho} favs = {favoritos}/>
-      <Rout produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
-      <Footer/> 
+      <Rout searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
+   
     </BrowserRouter>
     </>
   )

@@ -1,9 +1,14 @@
 import React from "react";
 import "./estilos/sobre.css";
 import logo from "../img/logo.png";
+import Nav from "../componentes/nav";
+import Footer from "../componentes/footer";
 
-const Sobre = () => {
+const Sobre = ({searchbtn, favs, cart}) => {
   return (
+    <>
+
+<Nav searchbtn={searchbtn} cart={cart} favs = {favs} />
     <div className="container">
       <div className="sobre">
         <h2>LOJA <b className="text-primary">io</b> by arotec</h2>
@@ -93,6 +98,8 @@ const Sobre = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 export default Sobre;

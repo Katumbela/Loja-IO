@@ -5,6 +5,7 @@ const Login = () =>{
         
         <>
            <div className='log_container'>
+            <center>LOGIN</center>
             <div className='box_left'>
                 <img src='' alt=''></img>
             </div>
