@@ -3,7 +3,9 @@ import React from "react";
 const ResumoCompra = ({ metodoObtencao, metodoPagamento, informacoesEntrega, finalizarCompra }) => {
   return (
     <div>
+
       <h4>Resumo da Compra</h4>
+      
       <p>Método de Obtenção: {metodoObtencao}</p>
       <p>Método de Pagamento: {metodoPagamento}</p>
       <p>Informações de Entrega:</p>
