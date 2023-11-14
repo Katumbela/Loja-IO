@@ -39,7 +39,7 @@ const PoliticasR = () => {
           <p></p>
 
           <div className="row">
-            <div className="col-2 col-md-6 col-xxl-5">
+            <div className="col-12 col-md-6 col-xxl-5">
               <p>
                 Preencha o formulário abaixo para entrar em contacto connosco.
               </p>
@@ -86,8 +86,8 @@ const PoliticasR = () => {
                 </div>
               </div>
             </div>
-            <div className="col-2 col-md-6 col-xxl-7">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62899657.99098638!2d-36.809641366561046!3d15.799183813367788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f76f87cfc9cb%3A0xe75faf7d53546198!2sArotec!5e0!3m2!1spt-PT!2sao!4v1699963329911!5m2!1spt-PT!2sao" width="600" height="450" style={{border:'0'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div className="col-12 col-md-6 col-xxl-7">
+                
             </div>
           </div>
         </div>

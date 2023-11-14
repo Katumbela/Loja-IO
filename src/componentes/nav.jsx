@@ -64,8 +64,8 @@ const Nav = ({ searchbtn, cart, favs }) => {
       </div>
       <div className='header'>
         <div className='container'>
-          <div className='nav mx-auto'>
-            <ul className='mx-auto'>
+          <div className='nav '>
+            <ul className=''>
               <li>
                 <Link to='/' className='link'>Inicio</Link>
               </li> 

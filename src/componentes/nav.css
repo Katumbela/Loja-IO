@@ -110,10 +110,32 @@ border-bottom: 2px solid #027e72;
    transform: translateX(50px);
 }
 
+
+@media (max-width: 325px) {
+    
+.header .nav ul li  {
+    list-style-type: none;
+    margin-right: 12px;
+    padding: 10px 0px;
+    text-decoration: none;
+ }
+ .header .nav ul li a {
+   padding: 8px 10px;
+    text-decoration: none;
+    color: #373753;
+ }
+}
+
 @media (max-width: 700px) {
         
+
+
     .caixa_pesquisa  {
         flex: 4;
+    }
+
+    .nav {
+        margin: auto !important;
     }
 }
 

@@ -18,10 +18,10 @@ const Footer = () => {
                         
                         <div className='icone'>
                             <ul>
-                                <li><BsFacebook /></li>
-                                <li><BsWhatsapp /></li>
-                                <li><BsInstagram /></li>
-                                <li><BsTwitter /></li>
+                                <li><a href="http://"><BsFacebook /></a></li>
+                                <li><a href="http://"><BsWhatsapp /></a></li>
+                                <li><a href="http://"><BsInstagram /></a></li>
+                                <li><a href="http://"><BsTwitter /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -29,28 +29,28 @@ const Footer = () => {
                     <div className='col-12 my-2 c px-4 col-md-3  '>
                         <h3>Minha Conta</h3>
                         <ul>
-                            <li>Login</li>
-                            <li>Cadastro</li>
-                            <li>Carrinho</li>
+                            <li><NavLink className='a' to={'/login'}>Login</NavLink></li>
+                            <li><NavLink className='a' to={'/signup'}>Cadastro</NavLink></li>
+                            <li><NavLink className='a' to={'/carrinho'}> Carrinho</NavLink></li>
                         </ul>
                     </div>
 
                     <div className='col-12 my-2 c col-md-3 px-3  '>
                         <h3>Links Rápidos</h3>
                         <ul>
-                            <li><NavLink to={'/'}>Pagina Inicial</NavLink></li>
-                            <li><NavLink to={'/produto'}>Productos</NavLink></li>
-                            <li><NavLink to={'/sobre'}>Sobre</NavLink></li>
-                            <li><NavLink to={'/sobre'}>Contacto</NavLink></li>
+                            <li><NavLink className='a' to={'/'}>Pagina Inicial</NavLink></li>
+                            <li><NavLink className='a' to={'/produto'}>Productos</NavLink></li>
+                            <li><NavLink className='a' to={'/sobre'}>Sobre</NavLink></li>
+                            <li><NavLink className='a' to={'/sobre'}>Contacto</NavLink></li>
                         </ul>
                     </div>
                     <div className='col-12 my-2 c col-md-3 px-3  '>
                         <h3>Legal</h3>
                         <ul>
-                            <li><NavLink to={'/reembolso'}>Políticas de reembolso</NavLink></li>
-                            <li><NavLink to={'/entregas'}>Entregas</NavLink></li>
-                            <li><NavLink to={'/legal'}>Legal</NavLink></li>
-                            <li><NavLink to={'/termos'}>Politicas e Termos</NavLink></li>
+                            <li><NavLink className='a' to={'/reembolso'}>Políticas de reembolso</NavLink></li>
+                            <li><NavLink className='a' to={'/entregas'}>Entregas</NavLink></li>
+                            <li><NavLink className='a' to={'/legal'}>Legal</NavLink></li>
+                            <li><NavLink className='a' to={'/termos'}>Politicas e Termos</NavLink></li>
                         </ul>
                     </div>
                 </div>

@@ -18,6 +18,14 @@
     margin-right: .6em;
     color: white;
 }
+.foot .container .icone ul li a {
+    transition: .1s ease-in;
+    color: white;
+}
+.foot .container .icone ul li a:hover {
+    transition: .1s ease-in;
+    color: #00b8a5;
+}
 
 .c ul {
     margin-left: 1.5rem;
@@ -36,6 +44,19 @@
     list-style-type: none;
 }
 
+.c ul li a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    list-style-type: none;
+    transition: .1s ease;
+}
+
+.c ul li a:hover{
+    color: #00b8a5;
+    transition: .1s;
+}
+
 .copy {
     padding: .8em 0;
     font-size: 12px;
@@ -43,6 +64,7 @@
 }
 .copy a {
     text-decoration: none;
+    color: #027e72;
 }
 
 .chat {
