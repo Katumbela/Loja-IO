@@ -7,6 +7,7 @@ import Contato from './paginas/contato';
 import Sobre from './paginas/sobre';
 import Login from './paginas/login'
 import Favoritos from './paginas/favoritos'
+import Finalizar from "./paginas/finalizar";
 const Rout = ({produto, favs, searchbtn, cart, setProduto, detalhe, ver, fechar, setFechar, carrinho, setCarrinho, addcarrinho, favoritos, setFavoritos, addfavorito}) => {
     return(
         <>
@@ -18,6 +19,7 @@ const Rout = ({produto, favs, searchbtn, cart, setProduto, detalhe, ver, fechar,
         <Route path='/sobre' element={<Sobre searchbtn={searchbtn} cart={carrinho} favs = {favoritos} />} />
         <Route path='/login' element={<Login searchbtn={searchbtn} cart={carrinho} favs = {favoritos} />} />
         <Route path='/favoritos' element={<Favoritos  searchbtn={searchbtn} cart={carrinho} favs = {favs}  setFavoritos={setFavoritos}/>} />
+        <Route path='/finalizar' element={<Finalizar  searchbtn={searchbtn} cart={carrinho} favs = {favs}  setFavoritos={setFavoritos}/>} />
        </Routes> 
        </>
     )

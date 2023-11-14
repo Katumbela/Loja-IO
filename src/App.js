@@ -41,24 +41,40 @@ const addcarrinho = (produto) => {
 
   if (existe) {
     Swal.fire({
-      title: 'Produto já adicionado',
-      text: 'Este produto já foi adicionado ao carrinho. Deseja finalizar a compra?',
-      icon: 'warning',
+      title: 'Produto adicionado',
+      text: `${produto.Titulo} foi adicionado ao carrinho. Deseja finalizar a compra?`,
+      icon: 'success',
       showCancelButton: true,
       confirmButtonText: 'Finalizar compra',
       cancelButtonText: 'Continuar comprando',
     }).then((result) => {
       if (result.isConfirmed) {
         // Redirecionar para a página de finalização de compra
-        // history.push('/finalizar');
+        window.location.href = '/finalizar';
+      } else {
+        // Continuar comprando (fechar o popup)
+        Swal.close();
+      }
+    });    
+  } else {
+    setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
+    Swal.fire({
+      title: 'Produto adicionado',
+      text: `${produto.Titulo} foi adicionado ao carrinho. Deseja finalizar a compra?`,
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonText: 'Finalizar compra',
+      cancelButtonText: 'Continuar comprando',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirecionar para a página de finalização de compra
+        window.location.href = '/finalizar';
       } else {
         // Continuar comprando (fechar o popup)
         Swal.close();
       }
     });
-  } else {
-    setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
-    Swal.fire('Produto adicionado', 'O produto foi adicionado ao carrinho', 'success');
+    
   }
 };
   console.log(carrinho)
@@ -69,10 +85,10 @@ const addcarrinho = (produto) => {
     const existe = favoritos.find((x) => x.id === produto.id);
   
     if (existe) {
-      Swal.fire("Produto já adicionado", "Este produto já foi adicionado aos favoritos", "warning");
+      Swal.fire("Produto adicionado", produto.Titulo +" foi adicionado aos favoritos com sucesso!", "success");
     } else {
       setFavoritos([...favoritos, { ...produto, quantidade: 1 }]);
-      Swal.fire("Produto adicionado", "O produto foi adicionado aos favoritos", "success");
+      Swal.fire("Produto adicionado", produto.Titulo +" foi adicionado aos favoritos com sucesso!", "success");
     }
   };
 
