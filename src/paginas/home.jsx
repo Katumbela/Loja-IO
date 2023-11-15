@@ -219,7 +219,9 @@ const Home = ({
                         <li onClick={() => ver(curElm)}>
                           <ImEye />
                         </li>
-                        <li>
+                        <li  onClick={() => 
+                                            addfavorito(curElm)
+                                    }>
                           {" "}
                           <AiOutlineHeart />
                         </li>
@@ -288,7 +290,9 @@ const Home = ({
                         <li onClick={() => ver(curElm)}>
                           <ImEye />
                         </li>
-                        <li>
+                        <li  onClick={() => 
+                                            addfavorito(curElm)
+                                    }>
                           {" "}
                           <AiOutlineHeart />
                         </li>

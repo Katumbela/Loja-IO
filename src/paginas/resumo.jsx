@@ -141,7 +141,7 @@ const ResumoCompra = ({
             >
               Finalizar Compra
             </button>
-            <a href="/" className="btn-sm w-100 btn btn-outline-danger mt-2">
+            <a to={"/"} className="btn-sm w-100 btn btn-outline-danger mt-2">
               Cancelar Compra
             </a>
           </div>

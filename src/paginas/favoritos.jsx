@@ -16,8 +16,8 @@ const Favoritos = ({cart, searchbtn, favoritos, addcarrinho, ver, favs, setFavor
           {favs.map((curElm) => {
             return (
               <div className="itensfav">
-                
                 <br />
+                <h2>Seus Favoritos</h2>
                 <div className="produto container">
                   <div className="container-flui ">
                     <div className="row ">

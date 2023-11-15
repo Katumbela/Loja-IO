@@ -5,7 +5,7 @@ import { BsCart3 } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 import { FiLogIn } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import './nav.css'
 import logo from '../img/logo.png'
@@ -35,9 +35,9 @@ const Nav = ({ searchbtn, cart, favs }) => {
 
       <div className='main_header bg-white'>
         <div className='container bg-white d-flex justify-content-between'>
-          <a href="/">
+          <NavLink href="/">
             <img src={logo} alt='logo' className='logo' />
-          </a>
+          </NavLink>
 
           <div className='caixa_pesquisa'>
             <input type='text' value={search} placeholder='Pesquise o seu produto' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>

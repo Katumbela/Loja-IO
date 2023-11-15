@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
             <center className="bg-light copy">&copy; 2023 &middot; IO &middot; Desenvolvido por <a href="http://www.arotec.ao">AROTEC</a></center>
             <div className="chat">
-                <a href="http://wa.me/244928134249"><BsWhatsapp/></a>
+                <a title='Enviar mensagem no whatsapp' href="http://wa.me/244938811659"><BsWhatsapp/></a>
             </div>
         </>
     )
