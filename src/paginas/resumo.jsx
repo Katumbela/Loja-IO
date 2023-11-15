@@ -116,7 +116,7 @@ const ResumoCompra = ({
       </div>
       <div className="row flex-row-reverse">
         <div className="col-12 col-md-4 my-4  col-lg-3">
-         <div className="card-resumo rounded-4 shadow">
+          <div className="card-resumo rounded-4 shadow">
             <b>Resumo de compra</b>
             <br />
             <div className="d-flex by mt-2 text-secondary justify-content-between">
@@ -188,6 +188,37 @@ const ResumoCompra = ({
               <p className="d-flex gap-2">
                 <BsBoxSeamFill className="text-primary" />{" "}
                 <span className="my-auto"> {metodoObtencao}</span>
+              </p>
+              <p></p>
+            </div>
+
+            <div className="mt-3 info-entrega bg-white shadow rounded-4 ">
+              <h4>Revise seus produtos</h4>
+              <p className="d-flex gap-2">
+                {cart.map((item) => {
+                  return (
+                    <div>
+                      <div className=" ">
+                        <div className="d-flex gap-2">
+                          <img
+                            style={{ height: "3em" }}
+                            src={item.Img}
+                            alt=""
+                          />{" "}
+                          <div className="">
+                            <h5
+                              className="text-primary"
+                              style={{ fontWeight: "lighter" }}
+                            >
+                              {item.Titulo}
+                            </h5>
+                            <span style={{fontSize:'12px'}} className="d-flex text-secondary ">Preço: {formatter.format(item.Preco)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </p>
               <p></p>
             </div>
