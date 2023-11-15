@@ -159,7 +159,7 @@ const Home = ({
       ) : null}
       <div className="top_banner banner_pub">
         <div className="text-center container">
-          <span>I O</span> <br />
+          <span>Loja de Eletrônicos</span> <br />
           <Link to={"/produto"} className="btn plus">
             Todos Produtos
           </Link>
