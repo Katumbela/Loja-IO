@@ -578,3 +578,13 @@ font-weight: bold;
 .swal2-icon {
   color: #027e72!important;
 }
+
+
+
+.d_s {
+  display: flex!important;
+  place-content: center;
+  place-items: center;
+  color: #027e72;
+  justify-content: center;
+}

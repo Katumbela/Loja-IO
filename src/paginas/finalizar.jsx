@@ -38,6 +38,8 @@ const Finalizar = ({ cart, searchbtn, favoritos, addcarrinho, ver, favs, setFavo
       )}
       {step === 4 && (
         <ResumoCompra
+
+          cart={cart}
           metodoObtencao={metodoObtencao}
           metodoPagamento={metodoPagamento}
           informacoesEntrega={informacoesEntrega}

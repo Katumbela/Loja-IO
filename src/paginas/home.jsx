@@ -238,9 +238,9 @@ const Home = ({
         </div>
       </div>
       <center className="my-4">
-        <a href={"/produto"} className="btn-primary btn">
+        <NavLink to={"/produto"} className="btn-primary btn">
           Todos os produtos <BsArrowRight />{" "}
-        </a>
+        </NavLink>
       </center>
       <div className="banner mt-2 px-2 mx-0 mx-sm-auto container">
         <div className="containe row">

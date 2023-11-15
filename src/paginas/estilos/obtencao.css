@@ -1,0 +1,145 @@
+
+.estilo-final {
+    margin: auto!important;
+    display: grid!important;
+    place-content: center;
+    height: 100vh;
+}
+
+.estilo-final .cardd {
+    margin: auto!important;
+}
+
+.estilo-final .cancel {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    text-decoration: none;
+    
+}
+
+.cardd {
+    background-color: white!important;
+}
+
+.btn-outline-primary {
+    border: 1px solid #027e72!important;
+    color: #027e72!important;
+}
+.btn-outline-primary:focus,
+.btn-outline-primary:focus-within,
+.btn-outline-primary:hover {
+    border: 1px solid #027e72!important;
+    background-color: #027e72!important;
+    color: #fff!important;
+}
+
+.cardd h4 {
+    color: #027e72;
+    font-weight: bolder;
+}
+
+.cardd label {
+    margin: .4rem 0;
+}
+.cardd label span {
+    margin: 0 .6rem;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cardd .info .secure {
+    
+    font-size: 12px;
+    color: rgb(6, 204, 19)
+}
+.cardd .info .back {
+    text-decoration: none;
+    font-size: 12px;
+    color: #092b0c
+}
+
+.estilo-final form, .estilo-final form label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+}
+
+.estilo-final form label span {
+    font-size: 12px;
+    color: grey;
+    margin-left: -.05rem;
+}
+
+.estilo-final .cardd {
+    padding: 2rem 3rem !important;
+}
+
+
+.estilo-final .infoo {
+    width: 500px !important;
+max-width: 700px;
+}
+
+.card-resumo {
+    background: white;
+    padding: 1rem;
+    font-size: 14px;
+}
+
+.card-resumo b {
+    color: #027e72;
+    font-size: 18px;
+}
+
+.card-resumo .by {
+    margin: .1rem 0!important;
+    padding: .1rem 0!important;
+    /* border-top: 1px solid grey; */
+    border-bottom: 1px dotted #027e72;
+    border-spacing: 6px;
+}
+
+.card-resumo .byy {
+    margin: .5rem 0!important;
+    padding: .2rem 0!important;
+    /* border-top: 1px solid grey; */
+    border-bottom: 1px dotted #027e72;
+    border-spacing: 6px;
+    font-weight: bold;
+}
+.info-entrega {
+    padding: .8rem;
+}
+
+.info-entrega ul li{
+    list-style-type: none;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.info-entrega h4 {
+    font-weight: lighter;
+    margin-top: .8rem;
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+}
+
+.info-entrega p {
+    margin-left: 1.5rem;
+}
+.info-entrega p span {
+    margin-left: 0rem;
+    text-transform: capitalize;
+    font-weight: lighter;
+}
+
+.info-entrega .nota {
+    text-transform: capitalize;
+    font-size: 12px;
+}
+.info-entrega span span {
+    font-weight: lighter;
+
+}

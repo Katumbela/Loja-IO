@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import React, {useState} from 'react'
 import Nav from './componentes/nav'
 import Rout from './rout';
@@ -6,9 +7,11 @@ import Footer from './componentes/footer';
 import Detalheproduto from './detalheproduto';
 import Swal from 'sweetalert2';
 
-import { useHistory } from 'react-router-dom';
 
 const App = () =>{
+
+  const navigate = useNavigate();
+
    //Favoritando Produtos
    const [favoritos, setFavoritos] = useState([])
   //adicionando produto ao carrinho
@@ -37,7 +40,7 @@ const App = () =>{
 const addcarrinho = (produto) => {
   const existe = carrinho.find((x) => x.id === produto.id);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  // const history = useHistory();
+ 
 
   if (existe) {
     Swal.fire({
@@ -50,7 +53,9 @@ const addcarrinho = (produto) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Redirecionar para a página de finalização de compra
-        window.location.href = '/finalizar';
+        // window.location.href = '/finalizar';
+        
+        navigate("/finalizar");
       } else {
         // Continuar comprando (fechar o popup)
         Swal.close();
@@ -68,7 +73,8 @@ const addcarrinho = (produto) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Redirecionar para a página de finalização de compra
-        window.location.href = '/finalizar';
+       
+        navigate("/finalizar");
       } else {
         // Continuar comprando (fechar o popup)
         Swal.close();
@@ -94,10 +100,7 @@ const addcarrinho = (produto) => {
 
   return(
     <>
-      <BrowserRouter>
       <Rout searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
-   
-    </BrowserRouter>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './estilos/carrinho.css'
 import { BsCart4, BsTrash3 } from 'react-icons/bs';
 import Nav from '../componentes/nav';
@@ -64,7 +64,7 @@ const Carrinho = ({cart, favs, searchbtn, carrinho, setCarrinho }) => {
                         <div className='container-md my-2 cc d-flex justify-content-between'>
                             <h2 className='my-auto precototal'>total:{Precototal} AOA</h2>
 
-                            <button className='checkout'>Checkout</button>
+                            <NavLink  to={'/finalizar'}  className='checkout'>Checkout</NavLink>
                         </div>
                     }
                     {
@@ -104,7 +104,7 @@ const Carrinho = ({cart, favs, searchbtn, carrinho, setCarrinho }) => {
                                 <span className="text-secondary">Ship fee: 0 AOA</span> <br />
                                 <span className="text-secondary">Discount: 0 AOA</span> <br />
                             </div>
-                            <button className='checkout'>Checkout</button>
+                            <NavLink to={'/finalizar'} className='checkout'>Checkout</NavLink>
                         </div>
                     }
                 </div>
