@@ -29,6 +29,7 @@ const ResumoCompra = ({
     pdf.text(`Email: ${informacoesEntrega.email}`, 20, 80);
     pdf.text(`Telefone: ${informacoesEntrega.telefone}`, 20, 90);
     pdf.text(`País: ${informacoesEntrega.pais}`, 20, 100);
+    pdf.text(`Produtos: ${cart}`, 20, 110);
 
     // Aqui você pode adicionar mais informações ao PDF conforme necessário
 
