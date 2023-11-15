@@ -10,6 +10,7 @@ import Favoritos from "./paginas/favoritos";
 import Finalizar from "./paginas/finalizar";
 import Sucesso from "./paginas/sucesso";
 import { ToastProvider } from "react-toast-notifications";
+import NotFound from "./paginas/404";
 
 const Rout = ({
   produto,
@@ -32,6 +33,8 @@ const Rout = ({
     <>
       <ToastProvider>
         <Routes>
+
+        <Route element={<NotFound/>}/>
           <Route
             path="/"
             element={
