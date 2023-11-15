@@ -20,10 +20,10 @@ const Sucesso = ({cart, searchbtn, favoritos, addcarrinho, ver, favs, setFavorit
         <br />
         <img src={box} alt="" />
             <h4 className="text-secondary w-75 text-primary">
-                Sua envomenda foi recebida com sucesso e está sendo processada por nossa equipe!
+                Sua encomenda foi recebida com sucesso e está sendo processada pela nossa equipe!
             </h4>
             <p className="text-secondary" style={{width:'55%'}}>
-                Vá para a pagina de rastreio e insira o codigo da sua compra para submeter o comprovativo, ou envie por email informando como titulo o <b>Compra - #Codigo de compra</b> 
+                Vá para a pagina de rastreio e insira o codigo da sua compra para submeter o comprovativo, ou envie por email informando como titulo "<b>Compra - #Codigo de compra</b>"
             </p>
             <a href="/" className="btn btn-primary">OK</a>
         </center>
