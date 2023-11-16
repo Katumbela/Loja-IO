@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
 import './estilos/carrinho.css'
@@ -37,6 +37,15 @@ const Carrinho = ({cart, favs, searchbtn, carrinho, setCarrinho }) => {
     }
     // Preço Total
     const Precototal = carrinho.reduce((preco, item) => preco + item.quantidade * item.Preco, 0)
+
+    const [curImg, setCurImg] = useState("");
+
+  const formatter = new Intl.NumberFormat("pt-PT", {
+    style: "currency",
+    currency: "AOA", // Código de moeda para Kwanza Angolano
+    minimumFractionDigits: 2,
+  });
+
 
     return (
         <>
