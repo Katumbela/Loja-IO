@@ -337,7 +337,7 @@ const Home = ({
                 </center>*/}
         <div className="container-flui ">
           <div className="row ">
-            {produtos.slice(7).map((curElm) => {
+            {produtos.slice(3).map((curElm) => {
               return (
                 <div
                   className=" col-12 col-sm-6 col-md-4 col-lg-3  col-xxl-3"
