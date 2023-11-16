@@ -31,10 +31,12 @@ import {
 } from "react-icons/fa";
 import Nav from "../componentes/nav";
 import Footer from "../componentes/footer";
+import getProdutoData from "./get_produtos";
 const Produto = ({
   produto,
   setProduto,
   detalhe,
+  buyNow,
   ver,
   searchbtn,
   cart,
@@ -45,17 +47,29 @@ const Produto = ({
   addfavorito,
 }) => {
   const [categoria, setCat] = useState("Todos");
+ 
+  const [produtos, setProdutos] = useState([]);
+  
+ 
   const filtterproduto = (produto) => {
-    const update = homeproduto.filter((x) => {
-      return x.Cat === produto;
+    const update = produtos.filter((x) => {
+      return x.categoria === produto;
     });
     setProduto(update);
+    setProdutos(update);
 
     setCat(produto);
   };
   const TodosProdutos = () => {
-    setProduto(homeproduto);
+    setProduto(produtos);
+    setProdutos(produtos);
+    fetchData();
     setCat("Todos");
+  };
+
+  const fetchData = async () => {
+    const data = await getProdutoData();
+    setProdutos(data);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -90,6 +104,26 @@ const Produto = ({
     };
   }, []);
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getProdutoData();
+      setProdutos(data);
+    };
+
+    fetchData();
+  }, []); // o segundo argumento do useEffect é um array de dependências, coloque aqui qualquer dependência necessária
+
+  const [curImg, setCurImg] = useState('');
+
+  const formatter = new Intl.NumberFormat("pt-PT", {
+    style: "currency",
+    currency: "AOA", // Código de moeda para Kwanza Angolano
+    minimumFractionDigits: 2,
+  });
+
+
+
   return (
     <>
       <Nav searchbtn={searchbtn} cart={cart} favs={favs} />
@@ -97,26 +131,48 @@ const Produto = ({
         <div className="detalhe_produto py-5">
           <div className="container-fluid ">
             <button
+              title="Voltar"
               onClick={() => setFechar(false)}
               className="btnfechar"
-              title="Voltar"
             >
-              <BiArrowBack />{" "}
+
+              <BiArrowBack />
             </button>
             {detalhe.map((curElm) => {
               return (
                 <div className="boxproduto py-5">
                   <div className="row w-100 my-3">
-                    <div className=" text-center col-12 col-md-4 col-xl-5 ">
-                      <img
-                        src={curElm.Img}
-                        alt={curElm.Titulo}
-                        className="img-see my-auto"
-                      />
+                    <div className="d-flex justify-content-center gap-4 text-center col-12 col-md-4 col-xl-5 ">
+                      <div className="">
+                      
+                          {curElm?.imagens.map((imagem, index) => (
+                           
+                           <p>
+                              <img 
+                              onClick={()=> setCurImg(imagem.url)}
+                                src={imagem.url}
+                                title="Clique para ver esta imagem"
+                                style={{
+                                  height: "2.6em",
+                                  width: "2.6em",
+                                  margin: ".2rem 0",
+                                  border:'2px solid green',
+                                  cursor:'pointer'
+                                }}
+                                alt=""
+                              /> </p>
+                            
+                          ))}
+                        </div>
+                        <img
+                          src={curImg}
+                          alt={curElm.nome}
+                          className="img-see my-2"
+                        />
                     </div>
 
                     <div className="detalhe px-4 px-md-0 col-12 col-md-8 col-xl-7 ">
-                      <h1>{curElm.Titulo}</h1>
+                      <h1>{curElm.nome}</h1>
                       <h4 className="text-secondary">{curElm.Cat}</h4>
                       <p className="d-flex gap-2">
                         <BsStarFill className="text-warning" />
@@ -125,22 +181,20 @@ const Produto = ({
                         <BsStarHalf className="text-warning" />
                         <BsStar className="text-warning" />
                       </p>
-                      <h3>{curElm.Preco} Kz</h3>
-                      <p className="text-secondary">
-                        Telefone recondicionado, vindo do lugar x ou algo
-                        parecido a isto, sei lá
-                      </p>
+                      <h3>{formatter.format(curElm.preco)} </h3>
+                      <p className="text-secondary">{curElm.estado}</p>
                       <div className="d-flex gap-4 btns-buy flex-wrap ">
                         <button
-                          onClick={() => 
-                                            addcarrinho(curElm)
-                                    }
+                          onClick={() => addcarrinho(curElm)}
                           className="w-sm-100 btn-outline"
                         >
                           Adicionar ao carrinho <BsCartPlus />
                         </button>
 
-                        <button className="w-sm-100">
+                        <button
+                          onClick={() => buyNow(curElm)}
+                          className="w-sm-100"
+                        >
                           Comprar agora <BsCart2 />
                         </button>
                       </div>
@@ -148,42 +202,33 @@ const Produto = ({
                     <div className="col-12 px-4 px-md-5 mt-md-5 container mt-4">
                       <div className="produto mt-3 mb-5 container">
                         <h2> Sobre este produto</h2>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Facere recusandae nobis modi laudantium
-                          temporibus ut tempora beatae doloribus perspiciatis
-                          sapiente quae, omnis a, accusantium reprehenderit
-                          excepturi quas odit magni? Totam.
-                        </p>
+                        <p className="mw-75">{curElm.descricao}</p>
 
                         <br />
                         <hr />
                         <br />
                         <br />
-                        <h5>Pode Gostar também de...</h5>
+                        <h2>Pode Gostar também de...</h2>
                         {/*<center>
-                                          <h1 className="titulo">Explore Nossa Loja</h1>
-                                      </center>*/}
+                                                            <h1 className="titulo">Explore Nossa Loja</h1>
+                                                        </center>*/}
                         <div className="container-flui ">
                           <div className="d-flex gap-2 overflow-x-scroll sroll-x">
-                            {homeproduto.slice(0, 10).map((curElm) => {
+                            {produtos.slice(0, 10).map((curElm) => {
                               return (
                                 <div className=" mx-2 " key={curElm.id}>
                                   <div
-                                    title={`Clique para ver ` + curElm.Titulo}
+                                    title={`Clique para ver ` + curElm.nome}
                                     className="box"
                                   >
                                     <div className="img_box">
-                                      <img
-                                        src={curElm.Img}
-                                        alt={curElm.Titulo}
-                                      />
+                                      <img src={curElm.imagens[0]?.url} alt={curElm.nome} />
                                       <div className="icone">
                                         <li onClick={() => addcarrinho(curElm)}>
                                           {" "}
                                           <PiShoppingCartBold />
                                         </li>
-                                        <li onClick={() => ver(curElm)}>
+                                        <li onClick={() => {ver(curElm); setCurImg(curElm.imagens[0]?.url);}}>
                                           <ImEye />
                                         </li>
                                         <li onClick={() => addfavorito(curElm)}>
@@ -193,12 +238,12 @@ const Produto = ({
                                       </div>
                                     </div>
                                     <div
-                                      onClick={() => ver(curElm)}
+                                      onClick={() => {ver(curElm); setCurImg(curElm.imagens[0]?.url)}}
                                       className="detalhe d-t"
                                     >
                                       <p>{curElm.Cat}</p>
-                                      <h5>{curElm.Titulo}</h5>
-                                      <h4>{curElm.Preco} kz</h4>
+                                      <h5>{curElm.nome}</h5>
+                                      <h4>{formatter.format(curElm.preco)} </h4>
                                     </div>
                                   </div>
                                 </div>
@@ -214,7 +259,7 @@ const Produto = ({
             })}
           </div>
         </div>
-      ) : null}
+      ): null}
       <div className={`produtos container my-4`}>
         <h3 className="titulo-produtos">
           Produtos {">"} {categoria}
@@ -318,18 +363,18 @@ const Produto = ({
                 </center>*/}
               <div className="container-flui ">
                 <div className="row ">
-                  {produto.map((curElm) => {
+                  {produtos.map((curElm) => {
                     return (
                       <div
                         className=" col-12 col-sm-6 col-md-4 col-lg-3  col-xxl-3"
                         key={curElm.id}
                       >
                         <div
-                          title={`Clique para ver ` + curElm.Titulo}
+                          title={`Clique para ver ` + curElm.nome}
                           className="box"
                         >
                           <div className="img_box">
-                            <img src={curElm.Img} alt={curElm.Titulo} />
+                            <img src={curElm.imagens[0]?.url} alt={curElm.nome} />
                             <div className="icone">
                               <li
                                 onClick={() => 
@@ -339,8 +384,9 @@ const Produto = ({
                                 {" "}
                                 <PiShoppingCartBold />
                               </li>
-                              <li onClick={() => ver(curElm)}>
-                                <ImEye />
+                              
+                              <li onClick={() => {ver(curElm); setCurImg(curElm.imagens[0]?.url);}}>
+                                  <ImEye />
                               </li>
                               <li  onClick={() => 
                                             addfavorito(curElm)
@@ -351,12 +397,12 @@ const Produto = ({
                             </div>
                           </div>
                           <div
-                            onClick={() => ver(curElm)}
+                            onClick={() => {ver(curElm); setCurImg(curElm.imagens[0]?.url)}}
                             className="detalhe d-t"
                           >
                             <p>{curElm.Cat}</p>
-                            <h3>{curElm.Titulo}</h3>
-                            <h4>{curElm.Preco} kz</h4>
+                            <h3>{curElm.nome}</h3>
+                            <h4>{formatter.format(curElm.preco)} kz</h4>
                           </div>
                         </div>
                       </div>

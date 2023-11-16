@@ -354,6 +354,14 @@ text-decoration: none;
     cursor: pointer;
 }
 
+
+.detalhe_produto .boxproduto  img
+{
+max-width: 10em!important;
+}
+
+
+
 .detalhe_produto .container-fluid .boxproduto .detalhe h4
 {
     text-transform: uppercase;

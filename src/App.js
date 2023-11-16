@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom';
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Nav from './componentes/nav'
 import Rout from './rout';
 import {BrowserRouter} from 'react-router-dom';
@@ -13,7 +13,17 @@ const App = () =>{
   const navigate = useNavigate();
 
    //Favoritando Produtos
-   const [favoritos, setFavoritos] = useState([])
+   const [favoritos, setFavoritos] = useState(
+    JSON.parse(localStorage.getItem('favoritos')) || []
+  );
+
+
+  useEffect(() => {
+    // Atualiza o localStorage sempre que os favoritos mudam
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  }, [favoritos]);
+
+
   //adicionando produto ao carrinho
   const [carrinho, setCarrinho] = useState([])
   // detalhes do produto
@@ -83,24 +93,59 @@ const addcarrinho = (produto) => {
     
   }
 };
+const buyNow = (produto) => {
+  const existe = carrinho.find((x) => x.id === produto.id);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+ 
+
+  if (existe) {
+     
+    navigate("/finalizar");
+  } else {
+    setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
+ 
+
+    navigate("/finalizar");
+    
+  }
+};
   console.log(carrinho)
   // Favoritando
 
 
   const addfavorito = (produto) => {
     const existe = favoritos.find((x) => x.id === produto.id);
-  
+
     if (existe) {
-      Swal.fire("Produto adicionado", produto.Titulo +" foi adicionado aos favoritos com sucesso!", "success");
+      Swal.fire(
+        'Produto adicionado',
+        `${produto.Titulo} foi adicionado aos favoritos com sucesso!`,
+        'success'
+      );
     } else {
       setFavoritos([...favoritos, { ...produto, quantidade: 1 }]);
-      Swal.fire("Produto adicionado", produto.Titulo +" foi adicionado aos favoritos com sucesso!", "success");
+      Swal.fire(
+        'Produto adicionado',
+        `${produto.Titulo} foi adicionado aos favoritos com sucesso!`,
+        'success'
+      );
     }
   };
 
+  const removerFavorito = (produto) => {
+    const novosFavoritos = favoritos.filter((x) => x.id !== produto.id);
+    setFavoritos(novosFavoritos);
+    Swal.fire(
+      'Produto removido',
+      `${produto.Titulo} foi removido dos favoritos com sucesso!`,
+      'success'
+    );
+  };
+
+
   return(
     <>
-      <Rout searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
+      <Rout removerFav={removerFavorito} buyNow={buyNow} searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
     </>
   )
 }

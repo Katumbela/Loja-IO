@@ -2,7 +2,10 @@ import React from "react";
 import { db } from "./config";
 import jsPDF from "jspdf";
 import { BsBoxSeamFill, BsCash } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const ResumoCompra = ({
   metodoObtencao,
@@ -12,6 +15,10 @@ const ResumoCompra = ({
   setCarrinho,
   finalizarCompra,
 }) => {
+
+
+  const navigate = useNavigate();
+
   const gerarPDF = (
     metodoObtencao,
     metodoPagamento,
@@ -108,6 +115,26 @@ const ResumoCompra = ({
 
   const precoTotalCompras = formatter.format(Precototal);
 
+  const cancelarCompra = () => {
+    Swal.fire({
+      title: 'Aviso !',
+      text: ` tem a certeza que deseja cancelar compra ?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim tenho',
+      cancelButtonText: 'Continuar comprando',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirecionar para a página de finalização de compra
+        window.location.href = '/';
+        
+        // navigate("/finalizar");
+      } else {
+        // Continuar comprando (fechar o popup)
+        Swal.close();
+      }
+    }); 
+  }
   return (
     <div className="container py-5">
       <div className="container">
@@ -142,7 +169,7 @@ const ResumoCompra = ({
             >
               Finalizar Compra
             </button>
-            <a to={"/"} className="btn-sm w-100 btn btn-outline-danger mt-2">
+            <a onClick={()=>{cancelarCompra()}} className="btn-sm w-100 btn btn-outline-danger mt-2">
               Cancelar Compra
             </a>
           </div>

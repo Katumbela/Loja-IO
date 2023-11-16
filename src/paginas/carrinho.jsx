@@ -73,18 +73,18 @@ const Carrinho = ({cart, favs, searchbtn, carrinho, setCarrinho }) => {
                                 <div className="container-md cc">
                                     <div className='item_carrinho row' key={curElm.id}>
                                         <div className='box_img col-4 col-md-3 '>
-                                            <img src={curElm.Img} alt={curElm.Titulo} className='' />
+                                            <img src={curElm.imagens[0]?.url} alt={curElm.nome} className='' />
                                         </div>
                                         <div className='detalhe col-8 col-md-9 position-relative'>
                                             <div className='info'>
-                                                <h3>{curElm.Titulo}</h3>
-                                                <p>Preço: {curElm.Preco}kz</p>
+                                                <h3>{curElm.nome}</h3>
+                                                <p>Preço: {formatter.format(curElm.preco)}kz</p>
                                                 <div className='quantidade'>
                                                     <button className='menos' onClick={() => menos(curElm)}>-</button>
                                                     <span className='my-auto' > {curElm.quantidade} </span>
                                                     <button className='mais' onClick={() => mais(curElm)}>+</button>
                                                 </div>
-                                                <h4>{curElm.quantidade + ' x ' + curElm.Preco} aoa</h4>
+                                                <h4>{curElm.quantidade + ' x ' + curElm.preco} aoa</h4>
                                                 <div className='fechar'>
                                                     <button title={'Remover este produto'} className='remover text-danger' onClick={() => remover(curElm)}><BsTrash3 /></button>
                                                 </div>

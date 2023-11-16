@@ -11,6 +11,7 @@ import Finalizar from "./paginas/finalizar";
 import Sucesso from "./paginas/sucesso";
 import { ToastProvider } from "react-toast-notifications";
 import NotFound from "./paginas/404";
+import SubmitP from "./paginas/adicionar_produto";
 
 const Rout = ({
   produto,
@@ -20,7 +21,9 @@ const Rout = ({
   setProduto,
   detalhe,
   ver,
+  buyNow,
   fechar,
+  removerFavorito,
   setFechar,
   carrinho,
   setCarrinho,
@@ -42,8 +45,10 @@ const Rout = ({
                 addfavorito={addfavorito}
                 searchbtn={searchbtn}
                 cart={carrinho}
+                removerFavorito={removerFavorito}
                 favs={favoritos}
                 detalhe={detalhe}
+                buyNow={buyNow}
                 ver={ver}
                 fechar={fechar}
                 setFechar={setFechar}
@@ -55,6 +60,8 @@ const Rout = ({
             path="/produto"
             element={
               <Produto
+              removerFavorito={removerFavorito}
+              buyNow={buyNow}
                 addfavorito={addfavorito}
                 searchbtn={searchbtn}
                 cart={carrinho}
@@ -73,6 +80,8 @@ const Rout = ({
             path="/carrinho"
             element={
               <Carrinho
+              removerFavorito={removerFavorito}
+              buyNow={buyNow}
                 searchbtn={searchbtn}
                 cart={carrinho}
                 favs={favoritos}
@@ -84,7 +93,8 @@ const Rout = ({
           <Route
             path="/contato"
             element={
-              <Contato searchbtn={searchbtn} cart={carrinho} favs={favoritos} />
+              <Contato 
+              removerFavorito={removerFavorito} searchbtn={searchbtn} cart={carrinho} favs={favoritos} />
             }
           />
           <Route
@@ -103,9 +113,28 @@ const Rout = ({
             path="/favoritos"
             element={
               <Favoritos
+              setFechar={setFechar}
+              buyNow={buyNow}
+                searchbtn={searchbtn}
+                fechar={fechar}
+                cart={carrinho}
+
+                removerFavorito={removerFavorito}
+                favs={favs}
+                ver={ver}
+                setFavoritos={setFavoritos}
+              />
+            }
+          />
+          <Route
+            path="/loja/adicionar/produto"
+            element={
+              <SubmitP
+              buyNow={buyNow}
                 searchbtn={searchbtn}
                 cart={carrinho}
                 favs={favs}
+                removerFavorito={removerFavorito}
                 setFavoritos={setFavoritos}
               />
             }
@@ -114,10 +143,13 @@ const Rout = ({
             path="/finalizar"
             element={
               <Finalizar
+
+              buyNow={buyNow}
                 searchbtn={searchbtn}
                 cart={carrinho}
                 setCarrinho={setCarrinho}
                 favs={favs}
+                removerFavorito={removerFavorito}
                 setFavoritos={setFavoritos}
               />
             }
@@ -129,6 +161,7 @@ const Rout = ({
                 searchbtn={searchbtn}
                 cart={carrinho}
                 favs={favs}
+                removerFavorito={removerFavorito}
                 setFavoritos={setFavoritos}
               />
             }
