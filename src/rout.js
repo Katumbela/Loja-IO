@@ -118,7 +118,6 @@ const Rout = ({
                 searchbtn={searchbtn}
                 fechar={fechar}
                 cart={carrinho}
-
                 removerFavorito={removerFavorito}
                 favs={favs}
                 ver={ver}

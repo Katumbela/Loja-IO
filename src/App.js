@@ -132,6 +132,7 @@ const buyNow = (produto) => {
     }
   };
 
+
   const removerFavorito = (produto) => {
     const novosFavoritos = favoritos.filter((x) => x.id !== produto.id);
     setFavoritos(novosFavoritos);
@@ -145,7 +146,7 @@ const buyNow = (produto) => {
 
   return(
     <>
-      <Rout removerFav={removerFavorito} buyNow={buyNow} searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
+      <Rout removerFavorito={removerFavorito} buyNow={buyNow} searchbtn={searchbtn} cart={carrinho} favs = {favoritos} produto={produto} setProduto={setProduto} detalhe={detalhe} ver={ver} fechar={fechar} setFechar={setFechar} carrinho={carrinho} setCarrinho={setCarrinho} addcarrinho={addcarrinho} favoritos={favoritos} setFavoritos={setFavoritos} addfavorito={addfavorito}/>
     </>
   )
 }
