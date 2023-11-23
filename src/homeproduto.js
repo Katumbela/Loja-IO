@@ -1,4 +1,4 @@
-import mac1 from './img/mac1.jpg'
+import mac1 from './img/mac1.png'
 import mac2 from './img/mac2.jpg'
 import mac3 from './img/mac3.jpeg'
 import ip1 from './img/ip1.jpg'
