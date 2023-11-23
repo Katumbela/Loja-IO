@@ -23,6 +23,12 @@ import "./estilos/home.css";
 import Nav from "../componentes/nav";
 import Footer from "../componentes/footer";
 import getProdutoData from "./get_produtos";
+import capa1 from '../img/capa1.png'
+import capa2 from '../img/capa2.png'
+
+
+
+
 const Home = ({
   searchbtn,
   addfavorito,
@@ -191,14 +197,28 @@ const Home = ({
           </div>
         </div>
       ) : null}
-      <div className="top_banner banner_pub">
+
+<div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+    <img src={capa1} className=" w-100" alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src={capa2} className=" w-100" alt="..."/>
+    </div>
+   
+  </div>
+ 
+</div>
+
+      {/* <div className="top_banner banner_pub">
         <div className="text-center container">
           <span>Loja de Eletrônicos</span> <br />
           <Link to={"/produto"} className="btn plus">
             Todos Produtos
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/*<div className="destaque">
                 <div className=" container-lg">

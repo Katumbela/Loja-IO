@@ -5,8 +5,6 @@ import { BsBoxSeamFill, BsCash } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
-
 const ResumoCompra = ({
   metodoObtencao,
   metodoPagamento,
@@ -15,18 +13,43 @@ const ResumoCompra = ({
   setCarrinho,
   finalizarCompra,
 }) => {
-
-
   const navigate = useNavigate();
+
+  // Preço Total
+  const Precototal = cart.reduce(
+    (preco, item) => preco + item.quantidade * item.preco,
+    0
+  );
+
+  // Preço Total
+  const PrecototalDesconto =
+    (cart.reduce((preco, item) => preco + item.quantidade * item.desconto, 0) /
+      100) *
+    Precototal;
+
+  let precoEntrega = metodoObtencao != "encomendar" ? 0 : 1500;
+
+  const formatter = new Intl.NumberFormat("pt-PT", {
+    style: "currency",
+    currency: "AOA", // Código de moeda para Kwanza Angolano
+    minimumFractionDigits: 2,
+  });
+
+  const precoTotalFormatado = formatter.format(
+    Precototal + precoEntrega - PrecototalDesconto
+  );
+
+  const precoTotalCompras = formatter.format(Precototal);
 
   const gerarPDF = (
     metodoObtencao,
     metodoPagamento,
     informacoesEntrega,
-    codigoRandomico
+    codigoRandomico,
+    cart
   ) => {
     const pdf = new jsPDF();
-    pdf.text("Resumo da Compra", 20, 10);
+    pdf.text("Resumo da Compra - LOJA IO", 40, 10);
     pdf.text(`Codigo de Compra: ${codigoRandomico}`, 20, 20);
     pdf.text(`Método de Obtenção: ${metodoObtencao}`, 20, 30);
     pdf.text(`Método de Pagamento: ${metodoPagamento}`, 20, 40);
@@ -36,7 +59,30 @@ const ResumoCompra = ({
     pdf.text(`Email: ${informacoesEntrega.email}`, 20, 80);
     pdf.text(`Telefone: ${informacoesEntrega.telefone}`, 20, 90);
     pdf.text(`País: ${informacoesEntrega.pais}`, 20, 100);
-    pdf.text(`Produtos: ${cart}`, 20, 110);
+    pdf.text("Produtos:", 20, 110);
+
+    pdf.text("Produtos:", 20, 110);
+
+    let offsetY = 120; // Inicie a posição Y para a lista de produtos
+
+    cart.forEach((item) => {
+      // Configurar o tamanho da fonte para o nome do produto
+      pdf.setFontSize(12); // Tamanho da fonte para o nome do produto
+      pdf.text(`- ${item.nome}`, 20, offsetY);
+
+      // Configurar o tamanho da fonte para preço e quantidade
+      pdf.setFontSize(10); // Tamanho da fonte para preço e quantidade
+      pdf.text(
+        `  Preço: ${formatter.format(item.preco)} | Quantidade: ${item.quantidade}`,
+        20,
+        offsetY + 5
+      );
+
+      offsetY += 20; // Ajuste para a próxima entrada
+    });
+
+    pdf.setFontSize(14);
+    pdf.text("Total ( AOA ):" + precoTotalFormatado, 20, offsetY + 30);
 
     // Aqui você pode adicionar mais informações ao PDF conforme necessário
 
@@ -55,6 +101,7 @@ const ResumoCompra = ({
         metodoObtencao,
         metodoPagamento,
         informacoesEntrega,
+        cart,
         dataCompra: new Date(),
       })
       .then((docRef) => {
@@ -78,7 +125,8 @@ const ResumoCompra = ({
       metodoObtencao,
       metodoPagamento,
       informacoesEntrega,
-      codigoRandomico
+      codigoRandomico,
+      cart
     );
 
     // Redirecionar para a página de sucesso ou fazer qualquer outra ação necessária
@@ -98,43 +146,26 @@ const ResumoCompra = ({
       );
     }
   };
-  // Preço Total
-  const Precototal = cart.reduce(
-    (preco, item) => preco + item.quantidade * item.Preco,
-    0
-  );
-  let precototall = Precototal + 1500;
-
-  const formatter = new Intl.NumberFormat("pt-PT", {
-    style: "currency",
-    currency: "AOA", // Código de moeda para Kwanza Angolano
-    minimumFractionDigits: 2,
-  });
-
-  const precoTotalFormatado = formatter.format(Precototal + 1500);
-
-  const precoTotalCompras = formatter.format(Precototal);
-
   const cancelarCompra = () => {
     Swal.fire({
-      title: 'Aviso !',
+      title: "Aviso !",
       text: ` tem a certeza que deseja cancelar compra ?`,
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Sim tenho',
-      cancelButtonText: 'Continuar comprando',
+      confirmButtonText: "Sim tenho",
+      cancelButtonText: "Continuar comprando",
     }).then((result) => {
       if (result.isConfirmed) {
         // Redirecionar para a página de finalização de compra
-        window.location.href = '/';
-        
+        window.location.href = "/";
+
         // navigate("/finalizar");
       } else {
         // Continuar comprando (fechar o popup)
         Swal.close();
       }
-    }); 
-  }
+    });
+  };
   return (
     <div className="container py-5">
       <div className="container">
@@ -151,14 +182,18 @@ const ResumoCompra = ({
               <span>Itens:</span>
               <span>{precoTotalCompras} </span>
             </div>
-            <div className="d-flex by mt-2 text-secondary justify-content-between">
-              <span>Entrega:</span>
-              <span>{formatter.format(1500)}</span>
-            </div>
+            {metodoObtencao == "encomendar" && (
+              <div className="d-flex by mt-2 text-secondary justify-content-between">
+                <span>Entrega:</span>
+                <span>{formatter.format(precoEntrega)}</span>
+              </div>
+            )}
+
             <div className="d-flex by mt-2 text-secondary justify-content-between">
               <span>Desconto:</span>
-              <span>0.00</span>
+              <span>{formatter.format(PrecototalDesconto)}</span>
             </div>
+
             <div className="d-flex byy text-secondary justify-content-between">
               <span>Total:</span>
               <span className="text-primary">{precoTotalFormatado} </span>
@@ -169,7 +204,12 @@ const ResumoCompra = ({
             >
               Finalizar Compra
             </button>
-            <a onClick={()=>{cancelarCompra()}} className="btn-sm w-100 btn btn-outline-danger mt-2">
+            <a
+              onClick={() => {
+                cancelarCompra();
+              }}
+              className="btn-sm w-100 btn btn-outline-danger mt-2"
+            >
               Cancelar Compra
             </a>
           </div>
@@ -230,7 +270,7 @@ const ResumoCompra = ({
                         <div className="d-flex gap-2">
                           <img
                             style={{ height: "3em" }}
-                            src={item.Img}
+                            src={item.imagens[0]?.url}
                             alt=""
                           />{" "}
                           <div className="">
@@ -238,9 +278,14 @@ const ResumoCompra = ({
                               className="text-primary"
                               style={{ fontWeight: "lighter" }}
                             >
-                              {item.Titulo}
+                              {item.nome}
                             </h5>
-                            <span style={{fontSize:'12px'}} className="d-flex text-secondary ">Preço: {formatter.format(item.Preco)}</span>
+                            <span
+                              style={{ fontSize: "12px" }}
+                              className="d-flex text-secondary "
+                            >
+                              Preço: {formatter.format(item.preco)}
+                            </span>
                           </div>
                         </div>
                       </div>

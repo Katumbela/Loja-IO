@@ -184,3 +184,8 @@ border-bottom: 2px solid #027e72;
 .link:hover {
     color: #027e72 !important;
 }
+
+
+#carouselExampleSlidesOnly img {
+    max-height: 500px;
+}
