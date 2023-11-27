@@ -1,27 +1,40 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
+.log_container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    place-content: center;
+    place-items: center;
 }
-.log_container 
-{
+
+.card-login {
+    background: white;
+    border: 1px solid #d9d9d9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 3px 9px grey;
+    max-width: 400px;
+    transition: all .3s ease-in;
+}
+
+.card-login:hover {
+    transform: translate3d(20deg);
+    box-shadow: 2px 3px 9px #027e72;
+    transition: all .2s ease-in;
+    transform: scale(.98);
+}
+
+.card-login input, .card-login button {
+border-radius: 5px;
+}
+
+.log_container .voltar {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background-color:white;
-}
-.log_container .box_left
-{
-    float: left;
-    width: 50%
-}
-.log_container .box_right
-{
-    float: right;
-    width:50%
+    left: 1rem;
+    top: 1rem;
+    text-decoration: none;
+    border: 1px solid #027e72;
+    color: #027e72;
+    font-size: 12px;
+    padding: .2rem 1rem;
+    border-radius: 40px;
 }

@@ -261,9 +261,9 @@ const Produto = ({
         </div>
       ): null}
       <div className={`produtos container my-4`}>
-        <h3 className="titulo-produtos">
+        {/* <h3 className="titulo-produtos">
           Produtos {">"} {categoria}
-        </h3>
+        </h3> */}
         <div className="row">
           <div className="filtro col-12 col-md-2 col-xxl-2">
             <div
